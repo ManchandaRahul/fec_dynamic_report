@@ -3,7 +3,6 @@ import KPI from "./components/KPI";
 import Charts from "./components/Charts";
 import Table from "./components/Table";
 import Papa from "papaparse";
-import * as XLSX from "xlsx";
 
 import LogisyncLogo from "./assets/logisync.jpeg";
 import KaruyakiLogo from "./assets/favicon.ico";
@@ -50,7 +49,7 @@ function App() {
     if (!processedData) {
       loadSavedReport();
     }
-  }, []);
+  }, [processedData]);
 
   const parseCSVFile = (file) => {
     return new Promise((resolve) => {
