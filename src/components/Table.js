@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as XLSX from "xlsx";  // ← Added for Excel export
 
-const isAdmin = new URLSearchParams(window.location.search).get("admin") === "true";
+// const isAdmin = new URLSearchParams(window.location.search).get("admin") === "true";
 
 function Table({ data, currentModule = "All" }) {
   const rows = Array.isArray(data) ? data : [];

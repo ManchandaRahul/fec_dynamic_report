@@ -219,20 +219,20 @@ function Charts({ data }) {
 }
 
 // Reusable card style (add to your global CSS or keep inline)
-const cardStyle = {
-  background: "white",
-  borderRadius: "12px",
-  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-  padding: "24px",
-  transition: "transform 0.2s, box-shadow 0.2s",
-};
+// const cardStyle = {
+//   background: "white",
+//   borderRadius: "12px",
+//   boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+//   padding: "24px",
+//   transition: "transform 0.2s, box-shadow 0.2s",
+// };
 
-const titleStyle = {
-  margin: "0 0 20px 0",
-  fontSize: "1.4rem",
-  fontWeight: 600,
-  color: "#1f2937",
-};
+// const titleStyle = {
+//   margin: "0 0 20px 0",
+//   fontSize: "1.4rem",
+//   fontWeight: 600,
+//   color: "#1f2937",
+// };
 
 // Apply styles via className or inline
 // You can also move to a CSS file:

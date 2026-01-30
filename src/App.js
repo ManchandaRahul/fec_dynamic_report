@@ -142,32 +142,58 @@ function App() {
       totalTimeSpent: cleaned.reduce((sum, row) => sum + row.TimeSpent, 0),
     };
   };
+  
+  const downloadProcessedJson = (processed) => {
+  if (!processed) return;
 
-  const processAllFiles = async () => {
-    if (!isAdmin || !csv1 || !csv2 || !csv3 || !csv4) return;
+  const jsonString = JSON.stringify(processed, null, 2);
+  const blob = new Blob([jsonString], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
 
-    setIsProcessing(true);
-    try {
-      const data1 = await parseCSVFile(csv1);
-      const data2 = await parseCSVFile(csv2);
-      const data3 = await parseCSVFile(csv3);
-      const data4 = await parseCSVFile(csv4);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "latest-report.json";
+  document.body.appendChild(link);
+  link.click();
 
-      const combined = [
-        ...data1.map(r => ({ ...r, module: "Import Part 1" })),
-        ...data2.map(r => ({ ...r, module: "Import Part 2" })),
-        ...data3.map(r => ({ ...r, module: "M&S Track" })),
-        ...data4.map(r => ({ ...r, module: "Payment Module" })),
-      ];
+  // Cleanup
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+};
 
-      setProcessedData(prepareDashboardData(combined));
-      setSelectedModule("");
-    } catch (error) {
-      console.error("Processing failed:", error);
-    } finally {
-      setIsProcessing(false);
-    }
-  };
+const processAllFiles = async () => {
+  if (!isAdmin || !csv1 || !csv2 || !csv3 || !csv4) return;
+
+  setIsProcessing(true);
+  try {
+    const data1 = await parseCSVFile(csv1);
+    const data2 = await parseCSVFile(csv2);
+    const data3 = await parseCSVFile(csv3);
+    const data4 = await parseCSVFile(csv4);
+
+    const combined = [
+      ...data1.map(r => ({ ...r, module: "Import Part 1" })),
+      ...data2.map(r => ({ ...r, module: "Import Part 2" })),
+      ...data3.map(r => ({ ...r, module: "M&S Track" })),
+      ...data4.map(r => ({ ...r, module: "Payment Module" })),
+    ];
+
+    const prepared = prepareDashboardData(combined);
+    setProcessedData(prepared);
+    setSelectedModule("");
+
+    // ← This is the missing part — trigger JSON download
+    downloadProcessedJson(prepared);
+
+    // Optional: user feedback
+    alert("Processing complete! latest-report.json has been downloaded.\nPlace it in /public/ and redeploy.");
+  } catch (error) {
+    console.error("Processing failed:", error);
+    alert("Error during processing. Check console for details.");
+  } finally {
+    setIsProcessing(false);
+  }
+};
 
   const getFilteredData = () => {
     if (!processedData || !selectedModule) return null;
