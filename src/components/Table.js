@@ -184,6 +184,7 @@ function Table({ data, currentModule = "All" }) {
         padding: "24px",
         borderRadius: "12px",
         boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+        minHeight: "520px", // ⭐ ADD THIS LINE
       }}
     >
       <div
@@ -326,7 +327,14 @@ function Table({ data, currentModule = "All" }) {
         </p>
       ) : (
         <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <table
+  style={{
+    width: "100%",
+    borderCollapse: "collapse",
+    tableLayout: "fixed", 
+  }}
+>
+
             <thead>
               <tr style={{ background: "#f3f4f6", borderBottom: "2px solid #e5e7eb" }}>
                 <th style={{ padding: "14px 12px", textAlign: "left", fontWeight: "600", color: "#374151" }}>

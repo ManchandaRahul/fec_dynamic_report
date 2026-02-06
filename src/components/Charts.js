@@ -21,8 +21,32 @@ function Charts({ data }) {
   if (!data) return null;
 
   // Prepare data with fallbacks
-  const issueTypes = data.typeData || [];
+  const issueTypesRaw = data.typeData || [];
+
+  // Define all issue types you want to ALWAYS show (even with 0)
+  const desiredIssueTypes = [
+    "Story",
+    "Sub-task",
+    "Task",
+    // Add more types if needed, e.g. "Spike", "Improvement", etc.
+  ];
+
+  // Create a map from your real data for quick lookup
+  const typeMap = new Map(
+    issueTypesRaw.map((item) => [item.name, item.value])
+  );
+
+  // Build final data — always include every desired type
+  const issueTypes = desiredIssueTypes.map((name) => ({
+    name,
+    value: typeMap.get(name) ?? 0, // 0 if not found
+  }));
+
+  // Sort by value descending (or keep original desired order)
+  // issueTypes.sort((a, b) => b.value - a.value); // ← uncomment if you prefer sorting
+
   const priorities = data.priorityData || [];
+
   const doneStatuses = data.statusData
     .filter((s) => String(s.name).toLowerCase().includes("done"))
     .sort((a, b) => b.value - a.value);
@@ -31,103 +55,51 @@ function Charts({ data }) {
     .filter((s) => !String(s.name).toLowerCase().includes("done"))
     .sort((a, b) => b.value - a.value);
 
-  // Common chart props for consistency
   const commonMargin = { top: 20, right: 30, left: 20, bottom: 40 };
 
   return (
-    <div style={{ 
-      display: "flex", 
-      flexDirection: "column", 
-      gap: "32px",
-      padding: "0 8px"
-    }}>
+    <div>
       {/* Row 1 - Two main charts side by side */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(480px, 1fr))",
-          gap: "28px",
-        }}
-      >
+      <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
         {/* 1. Issue Type Distribution - Horizontal Bar */}
-        <div className="chart-card">
-          <h3 className="chart-title">Issue Type Distribution</h3>
-          <ResponsiveContainer width="100%" height={320}>
+        <div style={{ flex: "1 1 45%", minWidth: "320px" }}>
+          <h3 style={{ textAlign: "center", marginBottom: "12px" }}>
+            Issue Type Distribution
+          </h3>
+          <ResponsiveContainer width="100%" height={300}>
             <BarChart
               data={issueTypes}
               layout="vertical"
               margin={commonMargin}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis type="number" domain={[0, "dataMax + 2"]} />
-              <YAxis 
-                type="category" 
-                dataKey="name" 
-                width={100}
-                tick={{ fontSize: 13 }}
-              />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: "white", 
-                  border: "1px solid #e5e7eb",
-                  borderRadius: "8px",
-                  padding: "12px"
-                }} 
-              />
-              <Bar 
-                dataKey="value" 
-                fill={COLORS.primary} 
-                radius={[0, 6, 6, 0]}
-                minPointSize={6}
-              >
-                <LabelList 
-                  dataKey="value" 
-                  position="right" 
-                  fill="#374151" 
-                  fontSize={13} 
-                />
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis type="number" />
+              <YAxis type="category" dataKey="name" width={100} />
+              <Tooltip />
+              <Bar dataKey="value" fill={COLORS.primary}>
+                <LabelList dataKey="value" position="right" />
               </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
 
         {/* 2. Priority Distribution - Horizontal Bar */}
-        <div className="chart-card">
-          <h3 className="chart-title">Priority Distribution</h3>
-          <ResponsiveContainer width="100%" height={320}>
+        <div style={{ flex: "1 1 45%", minWidth: "320px" }}>
+          <h3 style={{ textAlign: "center", marginBottom: "12px" }}>
+            Priority Distribution
+          </h3>
+          <ResponsiveContainer width="100%" height={300}>
             <BarChart
               data={priorities}
               layout="vertical"
-              margin={{ ...commonMargin, left: 80 }}
+              margin={commonMargin}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis type="number" domain={[0, "dataMax + 2"]} />
-              <YAxis 
-                type="category" 
-                dataKey="name" 
-                width={100}
-                tick={{ fontSize: 13 }}
-              />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: "white", 
-                  border: "1px solid #e5e7eb",
-                  borderRadius: "8px",
-                  padding: "12px"
-                }} 
-              />
-              <Bar 
-                dataKey="value" 
-                fill={COLORS.warning} 
-                radius={[0, 6, 6, 0]}
-                minPointSize={6}
-              >
-                <LabelList 
-                  dataKey="value" 
-                  position="right" 
-                  fill="#374151" 
-                  fontSize={13} 
-                />
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis type="number" />
+              <YAxis type="category" dataKey="name" width={100} />
+              <Tooltip />
+              <Bar dataKey="value" fill={COLORS.success}>
+                <LabelList dataKey="value" position="right" />
               </Bar>
             </BarChart>
           </ResponsiveContainer>
@@ -135,95 +107,53 @@ function Charts({ data }) {
       </div>
 
       {/* Row 2 - Status breakdowns */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(480px, 1fr))",
-          gap: "28px",
-        }}
-      >
+      <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", marginTop: "32px" }}>
         {/* Completed Tasks Status */}
-        <div className="chart-card">
-          <h3 className="chart-title">Completed Tasks Status</h3>
-          <ResponsiveContainer width="100%" height={360}>
+        <div style={{ flex: "1 1 45%", minWidth: "320px" }}>
+          <h3 style={{ textAlign: "center", marginBottom: "12px" }}>
+            Completed Tasks Status
+          </h3>
+          <ResponsiveContainer width="100%" height={300}>
             <BarChart
               data={doneStatuses}
               layout="vertical"
-              margin={{ ...commonMargin, left: 140 }}
+              margin={commonMargin}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis type="number" domain={[0, "dataMax + 2"]} />
-              <YAxis 
-                type="category" 
-                dataKey="name" 
-                width={140}
-                tick={{ fontSize: 13 }}
-              />
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis type="number" />
+              <YAxis type="category" dataKey="name" width={140} />
               <Tooltip />
-              <Bar 
-                dataKey="value" 
-                fill={COLORS.success} 
-                radius={[0, 6, 6, 0]}
-                minPointSize={6}
-              >
-                <LabelList 
-                  dataKey="value" 
-                  position="right" 
-                  fill="#374151" 
-                  fontSize={13} 
-                />
+              <Bar dataKey="value" fill={COLORS.success}>
+                <LabelList dataKey="value" position="right" />
               </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        {/* Pending/In Progress Tasks Status */}
-        <div className="chart-card">
-          <h3 className="chart-title">Pending / In Progress Tasks</h3>
-          <ResponsiveContainer width="100%" height={360}>
+        {/* Pending / In Progress Tasks */}
+        <div style={{ flex: "1 1 45%", minWidth: "320px" }}>
+          <h3 style={{ textAlign: "center", marginBottom: "12px" }}>
+            Pending / In Progress Tasks
+          </h3>
+          <ResponsiveContainer width="100%" height={300}>
             <BarChart
               data={pendingStatuses}
               layout="vertical"
-              margin={{ ...commonMargin, left: 140 }}
+              margin={commonMargin}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis type="number" domain={[0, "dataMax + 2"]} />
-              <YAxis 
-                type="category" 
-                dataKey="name" 
-                width={140}
-                tick={{ fontSize: 13 }}
-              />
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis type="number" />
+              <YAxis type="category" dataKey="name" width={140} />
               <Tooltip />
-              <Bar 
-                dataKey="value" 
-                fill={COLORS.primary} 
-                radius={[0, 6, 6, 0]}
-                minPointSize={6}
-              >
-                <LabelList 
-                  dataKey="value" 
-                  position="right" 
-                  fill="#374151" 
-                  fontSize={13} 
-                />
+              <Bar dataKey="value" fill={COLORS.warning}>
+                <LabelList dataKey="value" position="right" />
               </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
       </div>
-
-      {/* Optional: Add more charts later in new rows */}
     </div>
   );
 }
-
-// Reusable card style (add to your global CSS or keep inline)
-
-
-// Apply styles via className or inline
-// You can also move to a CSS file:
-// .chart-card { ...cardStyle }
-// .chart-title { ...titleStyle }
 
 export default Charts;

@@ -6,7 +6,7 @@ import Papa from "papaparse";
 
 import LogisyncLogo from "./assets/logisync.jpeg";
 import KaruyakiLogo from "./assets/favicon.ico";
-
+import KaruyakiLogo1 from "./assets/kup.png";
 function App() {
   const [csv1, setCsv1] = useState(null);
   const [csv2, setCsv2] = useState(null);
@@ -264,7 +264,8 @@ const processAllFiles = async () => {
       {/* Main content - restored to earlier tighter layout */}
       <div
         style={{
-          maxWidth: "1400px",
+            width: "1400px",
+            maxWidth: "100%",     
           margin: "0 auto",
           flex: 1,
           padding: "0.1rem",
@@ -438,7 +439,7 @@ const processAllFiles = async () => {
                 <Table
                   data={filteredData?.raw || []}
                   currentModule={selectedModule}
-                  key={selectedModule}
+                  // key={selectedModule}
                 />
               </div>
             </div>
@@ -498,11 +499,10 @@ const processAllFiles = async () => {
         >
           <span>Developed by</span>
           <img
-            src={KaruyakiLogo}
+            src={KaruyakiLogo1}
             alt="Karuyaki"
             style={{ height: "22px" }}
           />
-          <strong>Karuyaki</strong>
         </div>
       </div>
     </div>
