@@ -686,6 +686,42 @@
     },
     {
       "module": "M&S Track",
+      "IssueKey": "LGSN-647",
+      "Summary": "Email scheduler",
+      "IssueType": "Story",
+      "Status": "Development In Progress",
+      "Priority": "Medium",
+      "Resolution": "",
+      "Assignee": "tejaswinipapal",
+      "Description": "",
+      "TimeSpent": 0,
+      "Reporter": "tejaswinipapal",
+      "Creator": "tejaswinipapal",
+      "Created": "25-02-2026 10:24",
+      "Updated": "25-02-2026 10:24",
+      "StartDate": "",
+      "EndDate": ""
+    },
+    {
+      "module": "M&S Track",
+      "IssueKey": "LGSN-646",
+      "Summary": "Email Template Master",
+      "IssueType": "Story",
+      "Status": "UAT DONE",
+      "Priority": "Medium",
+      "Resolution": "",
+      "Assignee": "tejaswinipapal",
+      "Description": "Email Template Master Pending Work like listing form migration",
+      "TimeSpent": 14400,
+      "Reporter": "tejaswinipapal",
+      "Creator": "tejaswinipapal",
+      "Created": "25-02-2026 10:22",
+      "Updated": "25-02-2026 10:32",
+      "StartDate": "17-02-2026 00:00",
+      "EndDate": "17-02-2026 00:00"
+    },
+    {
+      "module": "M&S Track",
       "IssueKey": "LGSN-645",
       "Summary": "Import Module:Live Support:Ganesh & Sushama:16-02-2026",
       "IssueType": "Story",
@@ -698,9 +734,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "17-02-2026 11:43",
-      "Updated": "17-02-2026 11:45",
+      "Updated": "25-02-2026 11:28",
       "StartDate": "16-02-2026 00:00",
-      "EndDate": ""
+      "EndDate": "16-02-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -716,9 +752,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "16-02-2026 18:01",
-      "Updated": "16-02-2026 18:04",
+      "Updated": "25-02-2026 11:31",
       "StartDate": "13-02-2026 00:00",
-      "EndDate": ""
+      "EndDate": "13-02-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -734,9 +770,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "16-02-2026 17:59",
-      "Updated": "16-02-2026 18:00",
+      "Updated": "25-02-2026 11:32",
       "StartDate": "11-02-2026 00:00",
-      "EndDate": ""
+      "EndDate": "11-02-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -752,9 +788,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "16-02-2026 17:57",
-      "Updated": "16-02-2026 17:58",
+      "Updated": "25-02-2026 11:33",
       "StartDate": "10-02-2026 00:00",
-      "EndDate": ""
+      "EndDate": "10-02-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -770,9 +806,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "16-02-2026 17:54",
-      "Updated": "16-02-2026 17:56",
+      "Updated": "25-02-2026 11:34",
       "StartDate": "09-02-2026 00:00",
-      "EndDate": ""
+      "EndDate": "09-02-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -815,7 +851,7 @@
       "IssueKey": "LGSN-638",
       "Summary": "Import Module:Email Scheduler Masters Mail 08-02-2026:",
       "IssueType": "Story",
-      "Status": "UAT DONE",
+      "Status": "Development In Progress",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -824,9 +860,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "09-02-2026 12:13",
-      "Updated": "17-02-2026 11:50",
+      "Updated": "25-02-2026 11:49",
       "StartDate": "09-02-2026 00:00",
-      "EndDate": ""
+      "EndDate": "28-02-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -1004,9 +1040,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "27-01-2026 17:53",
-      "Updated": "27-01-2026 17:55",
+      "Updated": "25-02-2026 11:50",
       "StartDate": "23-01-2026 00:00",
-      "EndDate": ""
+      "EndDate": "26-01-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -1040,9 +1076,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "27-01-2026 17:49",
-      "Updated": "27-01-2026 17:51",
+      "Updated": "25-02-2026 11:52",
       "StartDate": "23-01-2026 00:00",
-      "EndDate": ""
+      "EndDate": "23-01-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -1058,9 +1094,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "27-01-2026 17:45",
-      "Updated": "27-01-2026 17:48",
+      "Updated": "25-02-2026 11:52",
       "StartDate": "22-01-2026 00:00",
-      "EndDate": ""
+      "EndDate": "22-01-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -1076,9 +1112,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "27-01-2026 17:38",
-      "Updated": "27-01-2026 17:43",
+      "Updated": "25-02-2026 11:53",
       "StartDate": "21-01-2026 00:00",
-      "EndDate": ""
+      "EndDate": "21-01-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -1094,9 +1130,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "27-01-2026 17:32",
-      "Updated": "27-01-2026 17:36",
+      "Updated": "25-02-2026 11:54",
       "StartDate": "20-01-2026 00:00",
-      "EndDate": ""
+      "EndDate": "22-01-2026 00:00"
     },
     {
       "module": "M&S Track",
@@ -1580,8 +1616,8 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "15-12-2025 17:49",
-      "Updated": "15-12-2025 17:49",
-      "StartDate": "",
+      "Updated": "25-02-2026 12:06",
+      "StartDate": "08-12-2025 00:00",
       "EndDate": "08-12-2025 00:00"
     },
     {
@@ -1760,9 +1796,9 @@
       "Reporter": "Ganesh Pitre",
       "Creator": "Ganesh Pitre",
       "Created": "16-11-2025 11:59",
-      "Updated": "16-11-2025 12:15",
-      "StartDate": "",
-      "EndDate": ""
+      "Updated": "25-02-2026 12:09",
+      "StartDate": "16-11-2025 00:00",
+      "EndDate": "16-11-2025 00:00"
     },
     {
       "module": "M&S Track",
@@ -1868,9 +1904,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "04-11-2025 10:30",
-      "Updated": "04-11-2025 10:42",
-      "StartDate": "",
-      "EndDate": ""
+      "Updated": "25-02-2026 12:10",
+      "StartDate": "04-11-2025 00:00",
+      "EndDate": "04-11-2025 00:00"
     },
     {
       "module": "M&S Track",
@@ -2030,9 +2066,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "29-09-2025 19:55",
-      "Updated": "29-09-2025 20:00",
+      "Updated": "25-02-2026 12:11",
       "StartDate": "29-09-2025 00:00",
-      "EndDate": ""
+      "EndDate": "29-09-2025 00:00"
     },
     {
       "module": "M&S Track",
@@ -2228,9 +2264,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "15-09-2025 11:10",
-      "Updated": "16-09-2025 15:20",
-      "StartDate": "",
-      "EndDate": ""
+      "Updated": "25-02-2026 12:12",
+      "StartDate": "15-09-2025 00:00",
+      "EndDate": "16-09-2025 00:00"
     },
     {
       "module": "M&S Track",
@@ -2336,8 +2372,8 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "01-09-2025 16:39",
-      "Updated": "01-09-2025 17:38",
-      "StartDate": "",
+      "Updated": "25-02-2026 12:13",
+      "StartDate": "01-09-2025 00:00",
       "EndDate": "28-08-2025 00:00"
     },
     {
@@ -2804,9 +2840,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "02-07-2025 11:10",
-      "Updated": "02-07-2025 11:11",
-      "StartDate": "",
-      "EndDate": ""
+      "Updated": "25-02-2026 12:14",
+      "StartDate": "02-07-2025 00:00",
+      "EndDate": "02-07-2025 00:00"
     },
     {
       "module": "M&S Track",
@@ -2840,9 +2876,9 @@
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
       "Created": "02-07-2025 10:39",
-      "Updated": "02-07-2025 11:27",
-      "StartDate": "",
-      "EndDate": ""
+      "Updated": "25-02-2026 12:16",
+      "StartDate": "02-07-2025 00:00",
+      "EndDate": "02-07-2025 00:00"
     },
     {
       "module": "M&S Track",
@@ -11773,7 +11809,7 @@
       "EndDate": "18-07-2025 00:00"
     }
   ],
-  "totalIssues": 654,
+  "totalIssues": 656,
   "statusData": [
     {
       "name": "Development Done",
@@ -11797,7 +11833,7 @@
     },
     {
       "name": "Development In Progress",
-      "value": 13
+      "value": 15
     },
     {
       "name": "TESTING DONE",
@@ -11827,7 +11863,7 @@
     },
     {
       "name": "Medium",
-      "value": 654
+      "value": 656
     },
     {
       "name": "High",
@@ -11841,7 +11877,7 @@
     },
     {
       "name": "Story",
-      "value": 288
+      "value": 290
     },
     {
       "name": "Subtask",
@@ -11851,7 +11887,7 @@
   "resolutionData": [
     {
       "name": "Unknown",
-      "value": 368
+      "value": 370
     },
     {
       "name": "Done",
@@ -11865,7 +11901,7 @@
     },
     {
       "name": "tejaswinipapal",
-      "count": 139
+      "count": 141
     },
     {
       "name": "Rohan Kadam",
@@ -11892,5 +11928,5 @@
       "count": 1
     }
   ],
-  "totalTimeSpent": 11562120
+  "totalTimeSpent": 11576520
 }
