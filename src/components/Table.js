@@ -2,7 +2,10 @@ import React, { useState, useMemo } from "react";
 import * as XLSX from "xlsx";
 
 function Table({ data, currentModule = "All" }) {
-  const rows = Array.isArray(data) ? data : [];
+  const rows = useMemo(() => {
+  return Array.isArray(data) ? data : [];
+}, [data]);
+
   const [openRow, setOpenRow] = useState(null);
 
   // 🔥 NEW FILTER STATES (Added Only)

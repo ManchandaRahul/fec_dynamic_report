@@ -34,7 +34,6 @@ const issueTypes = desiredIssueTypes.map((name) => ({
   value: typeMap.get(name) ?? 0,
 }));
 
-  const priorities = data.priorityData || [];
 
   const doneStatuses = (data.statusData || [])
     .filter((s) => String(s.name).toLowerCase().includes("done"))

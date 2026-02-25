@@ -88,7 +88,7 @@ function App() {
 Description: (
   getField(["Description", "description"]) || ""
 )
-  .replace(/[^a-zA-Z0-9\[\]\s]/g, "")
+  .replace(/[^a-zA-Z0-9[\] ]/g, "")
   .replace(/\s+/g, " ")
   .trim(),
           TimeSpent: parseInt(getField(["Time Spent", "Σ Time Spent"]) || "0", 10),
