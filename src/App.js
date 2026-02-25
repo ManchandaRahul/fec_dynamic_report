@@ -85,7 +85,12 @@ function App() {
           Priority: getField(["Priority", "priority"]),
           Resolution: getField(["Resolution", "resolution"]),
           Assignee: getField(["Assignee", "assignee"]),
-          Description: getField(["Description", "description"]),
+Description: (
+  getField(["Description", "description"]) || ""
+)
+  .replace(/[^a-zA-Z0-9\[\]\s]/g, "")
+  .replace(/\s+/g, " ")
+  .trim(),
           TimeSpent: parseInt(getField(["Time Spent", "Σ Time Spent"]) || "0", 10),
           Reporter: getField(["Reporter", "reporter"]),
           Creator: getField(["Creator", "creator"]),
@@ -194,15 +199,49 @@ const processAllFiles = async () => {
   }
 };
 
-  const getFilteredData = () => {
-    if (!processedData || !selectedModule) return null;
+const getFilteredData = () => {
+  if (!processedData || !selectedModule) return null;
 
-    const filteredRows = processedData.raw.filter(
-      (row) => row.module === selectedModule
-    );
+  const filteredRows = processedData.raw.filter(
+    (row) => row.module === selectedModule
+  );
 
-    return prepareDashboardData(filteredRows);
+  // Recalculate stats WITHOUT reprocessing structure
+  const countBy = (key) => {
+    const map = {};
+    filteredRows.forEach((row) => {
+      const val = row[key] || "Unknown";
+      map[val] = (map[val] || 0) + 1;
+    });
+
+    if (key === "Priority") {
+      return [
+        { name: "Low", value: map["Low"] || 0 },
+        { name: "Medium", value: map["Medium"] || 0 },
+        { name: "High", value: map["High"] || 0 },
+      ];
+    }
+
+    return Object.entries(map)
+      .map(([name, value]) => ({ name, value }))
+      .sort((a, b) => b.value - a.value);
   };
+
+  return {
+    raw: filteredRows,
+    totalIssues: filteredRows.length,
+    statusData: countBy("Status"),
+    priorityData: countBy("Priority"),
+    typeData: countBy("IssueType"),
+    resolutionData: countBy("Resolution"),
+    assigneeData: [],
+    totalTimeSpent: filteredRows.reduce(
+      (sum, row) => sum + row.TimeSpent,
+      0
+    ),
+  };
+};
+
 
   const filteredData = getFilteredData();
 
