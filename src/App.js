@@ -60,92 +60,174 @@ function App() {
     });
   };
 
-  const prepareDashboardData = (combined) => {
-    const cleaned = combined
-      .map(row => {
-        const getField = (possibleNames) => {
-          for (const name of possibleNames) {
-            if (row[name] !== undefined && row[name] !== null) {
-              return row[name];
-            }
-            const lowerName = name.toLowerCase();
-            if (row[lowerName] !== undefined && row[lowerName] !== null) {
-              return row[lowerName];
-            }
+const prepareDashboardData = (combined) => {
+  const cleaned = combined
+    .map((row) => {
+      // 🔹 Smart field matcher (case + trim safe)
+      const getField = (possibleNames) => {
+        const normalizedRow = {};
+
+        Object.keys(row).forEach((key) => {
+          normalizedRow[key.trim().toLowerCase()] = row[key];
+        });
+
+        for (const name of possibleNames) {
+          const value = normalizedRow[name.toLowerCase()];
+          if (value !== undefined && value !== null && value !== "") {
+            return value;
           }
-          return "";
-        };
+        }
 
-        return {
-          module: row.module || "",
-          IssueKey: getField(["Issue key", "IssueKey", "issue key", "Issue Key"]),
-          Summary: getField(["Summary", "summary"]),
-          IssueType: getField(["Issue Type", "IssueType", "issue type"]),
-          Status: getField(["Status", "status"]),
-          Priority: getField(["Priority", "priority"]),
-          Resolution: getField(["Resolution", "resolution"]),
-          Assignee: getField(["Assignee", "assignee"]),
-Description: (
-  getField(["Description", "description"]) || ""
-)
-  .replace(/[^a-zA-Z0-9[\] ]/g, "")
-  .replace(/\s+/g, " ")
-  .trim(),
-          TimeSpent: parseInt(getField(["Time Spent", "Σ Time Spent"]) || "0", 10),
-          Reporter: getField(["Reporter", "reporter"]),
-          Creator: getField(["Creator", "creator"]),
-          Created: getField(["Created", "created"]),
-          Updated: getField(["Updated", "updated"]),
-        };
-      })
-      .filter(row => {
-        const hasKey = (row.IssueKey || "").trim().length > 0;
-        const hasSummary = (row.Summary || "").trim().length > 2;
-        return hasKey && hasSummary;
-      });
+        return "";
+      };
 
-    const countBy = (key) => {
-      const map = {};
-      cleaned.forEach((row) => {
-        const val = row[key] || "Unknown";
-        map[val] = (map[val] || 0) + 1;
-      });
+      /* ----------------------------------------------------
+         🔥 MODULE-WISE DATE HANDLING (RESTORED)
+      ---------------------------------------------------- */
 
-      if (key === "Priority") {
-        return [
-          { name: "Low", value: map["Low"] || 0 },
-          { name: "Medium", value: map["Medium"] || 0 },
-          { name: "High", value: map["High"] || 0 },
-        ];
+      let startDate = "";
+      let endDate = "";
+
+      if (row.module === "M&S Track") {
+        startDate = getField([
+          "Custom field (Planned_Date)",
+          "custom field (planned_date)"
+        ]);
+
+        endDate = getField([
+          "Due date",
+          "Due Date",
+          "due date"
+        ]);
+      }
+      else if (row.module === "Payment Module") {
+        startDate = getField([
+          "Custom field (Start Date)",
+          "Custom field (Start date)"
+        ]);
+
+        endDate = getField([
+          "Due date",
+          "Due Date",
+          "Updated",
+          "updated"
+        ]);
+      }
+      else {
+        // Import Part 1 & 2
+        startDate = getField(["Created", "created"]);
+
+        endDate = getField([
+          "Due date",
+          "Due Date",
+          "due date"
+        ]);
       }
 
-      return Object.entries(map)
-        .map(([name, value]) => ({ name, value }))
-        .sort((a, b) => b.value - a.value);
-    };
+      return {
+        module: row.module || "",
 
-    const assignees = {};
-    cleaned.forEach((row) => {
-      const a = row.Assignee || "Unassigned";
-      assignees[a] = (assignees[a] || 0) + 1;
+        IssueKey: getField([
+          "Issue key",
+          "IssueKey",
+          "issue key",
+          "Issue Key"
+        ]),
+
+        Summary: getField(["Summary", "summary"]),
+
+        IssueType: getField([
+          "Issue Type",
+          "IssueType",
+          "issue type"
+        ]),
+
+        Status: getField(["Status", "status"]),
+
+        Priority: getField(["Priority", "priority"]),
+
+        Resolution: getField(["Resolution", "resolution"]),
+
+        Assignee: getField(["Assignee", "assignee"]),
+
+        Description: (
+          getField(["Description", "description"]) || ""
+        )
+          .replace(/[^a-zA-Z0-9[\] ]/g, "")
+          .replace(/\s+/g, " ")
+          .trim(),
+
+        TimeSpent: parseInt(
+          getField(["Time Spent", "Σ Time Spent"]) || "0",
+          10
+        ),
+
+        Reporter: getField(["Reporter", "reporter"]),
+        Creator: getField(["Creator", "creator"]),
+        Created: getField(["Created", "created"]),
+        Updated: getField(["Updated", "updated"]),
+
+        // 🔹 Unified Dates (important for graphs + table)
+        StartDate: startDate,
+        EndDate: endDate,
+      };
+    })
+    .filter((row) => {
+      const hasKey = (row.IssueKey || "").trim().length > 0;
+      const hasSummary = (row.Summary || "").trim().length > 2;
+      return hasKey && hasSummary;
     });
 
-    const assigneeData = Object.entries(assignees)
-      .map(([name, count]) => ({ name, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 10);
+  /* ----------------------------------------------------
+     🔥 COUNTING LOGIC (UNCHANGED STRUCTURE)
+  ---------------------------------------------------- */
 
-    return {
-      raw: cleaned,
-      totalIssues: cleaned.length,
-      statusData: countBy("Status"),
-      priorityData: countBy("Priority"),
-      typeData: countBy("IssueType"),
-      resolutionData: countBy("Resolution"),
-      assigneeData,
-      totalTimeSpent: cleaned.reduce((sum, row) => sum + row.TimeSpent, 0),
-    };
+  const countBy = (key) => {
+    const map = {};
+    cleaned.forEach((row) => {
+      const val = row[key] || "Unknown";
+      map[val] = (map[val] || 0) + 1;
+    });
+
+    if (key === "Priority") {
+      return [
+        { name: "Low", value: map["Low"] || 0 },
+        { name: "Medium", value: map["Medium"] || 0 },
+        { name: "High", value: map["High"] || 0 },
+      ];
+    }
+
+    return Object.entries(map)
+      .map(([name, value]) => ({ name, value }))
+      .sort((a, b) => b.value - a.value);
   };
+
+  const assignees = {};
+  cleaned.forEach((row) => {
+    const a = row.Assignee || "Unassigned";
+    assignees[a] = (assignees[a] || 0) + 1;
+  });
+
+  const assigneeData = Object.entries(assignees)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 10);
+
+  return {
+    raw: cleaned,
+    totalIssues: cleaned.length,
+    statusData: countBy("Status"),
+    priorityData: countBy("Priority"),
+    typeData: countBy("IssueType"),
+    resolutionData: countBy("Resolution"),
+    assigneeData,
+    totalTimeSpent: cleaned.reduce(
+      (sum, row) => sum + row.TimeSpent,
+      0
+    ),
+  };
+};
+
   
   const downloadProcessedJson = (processed) => {
   if (!processed) return;
