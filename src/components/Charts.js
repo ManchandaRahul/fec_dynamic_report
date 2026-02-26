@@ -32,11 +32,11 @@ function Charts({
 
   const issueTypesRaw = filteredData?.typeData || [];
 
-const desiredIssueTypes = ["Story", "Task", "Sub-task"];
+// const desiredIssueTypes = ["Story", "Task", "Sub-task"];
 
-const typeMap = new Map(
-  issueTypesRaw.map((item) => [item.name, item.value])
-);
+// const typeMap = new Map(
+//   issueTypesRaw.map((item) => [item.name, item.value])
+// );
 
 // const issueTypes = desiredIssueTypes.map((name) => ({
 //   name,
