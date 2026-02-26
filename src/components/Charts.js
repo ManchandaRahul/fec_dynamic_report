@@ -38,10 +38,10 @@ const typeMap = new Map(
   issueTypesRaw.map((item) => [item.name, item.value])
 );
 
-const issueTypes = desiredIssueTypes.map((name) => ({
-  name,
-  value: typeMap.get(name) ?? 0,
-}));
+// const issueTypes = desiredIssueTypes.map((name) => ({
+//   name,
+//   value: typeMap.get(name) ?? 0,
+// }));
 
 
 
