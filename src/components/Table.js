@@ -15,25 +15,37 @@ function Table({ data, currentModule = "All" }) {
   const [assigneeFilter, setAssigneeFilter] = useState("");
 
   // ✅ Safe Date Formatter (DD-MM-YYYY only, no timezone issues)
-  const formatDate = (value) => {
-    if (!value) return "-";
+// ✅ Strict DD-MM-YYYY Safe Formatter
+const formatDate = (value) => {
+  if (!value) return "-";
 
-    if (typeof value === "string" && value.includes("-") && value.length <= 10) {
-      return value.split(" ")[0];
-    }
+  const raw = String(value).trim().split(" ")[0];
 
-    const date = new Date(value);
+  // 🔥 If already DD-MM-YYYY → return as-is
+  if (/^\d{2}-\d{2}-\d{4}$/.test(raw)) {
+    return raw;
+  }
 
-    if (isNaN(date.getTime())) {
-      return String(value).split(" ")[0] || "-";
-    }
-
-    const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const year = date.getFullYear();
-
+  // 🔥 If ISO format (YYYY-MM-DD)
+  if (/^\d{4}-\d{2}-\d{2}/.test(raw)) {
+    const [year, month, day] = raw.split("-");
     return `${day}-${month}-${year}`;
-  };
+  }
+
+  // 🔥 If JS Date object or other format
+  const date = new Date(raw);
+
+  if (isNaN(date.getTime())) {
+    return raw;
+  }
+
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+
+  return `${day}-${month}-${year}`;
+};
+
 
   const toggleRow = (index) => {
     setOpenRow(openRow === index ? null : index);

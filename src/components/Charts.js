@@ -18,10 +18,19 @@ const COLORS = {
   gray: "#6b7280",
 };
 
-function Charts({ data, selectedMonthKey, setSelectedMonthKey }) {
-  if (!data) return null;
+function Charts({
+  moduleData,
+  filteredData,
+  selectedModule,
+  selectedMonthKey,
+  setSelectedMonthKey,
+}) 
 
-  const issueTypesRaw = data.typeData || [];
+ {
+  if (!moduleData || !filteredData) return null;
+
+
+  const issueTypesRaw = filteredData?.typeData || [];
 
 const desiredIssueTypes = ["Story", "Task", "Sub-task"];
 
@@ -35,7 +44,9 @@ const issueTypes = desiredIssueTypes.map((name) => ({
 }));
 
 
-  const doneStatuses = (data.statusData || [])
+
+const doneStatuses = (filteredData?.statusData || [])
+
     .filter((s) => String(s.name).toLowerCase().includes("done"))
     .sort((a, b) => b.value - a.value);
 
@@ -49,10 +60,12 @@ const desiredPendingStatuses = [
 ];
 
 const pendingMap = new Map(
-  (data.statusData || [])
+  (filteredData?.statusData || [])
     .filter((s) => !String(s.name).toLowerCase().includes("done"))
     .map((item) => [item.name, item.value])
 );
+
+
 
 const pendingStatuses = desiredPendingStatuses.map((status) => ({
   name: status,
@@ -66,19 +79,24 @@ const pendingStatuses = desiredPendingStatuses.map((status) => ({
   // 🔥 UNIVERSAL Month Logic (for ALL modules)
 const monthMap = {};
 
-(data.raw || []).forEach((row) => {
+const moduleRows = (moduleData?.raw || []).filter(
+  (row) => row.module === selectedModule
+);
+
+moduleRows.forEach((row) => {
   if (!row.StartDate) return;
 
   let date;
 
-  const value = row.StartDate.trim();
+  // Remove timestamp first — same as in App.jsx
+  const value = row.StartDate.trim().split(" ")[0];
 
-  // 🔥 Case 1: DD-MM-YYYY
+  // Case 1: DD-MM-YYYY
   if (/^\d{2}-\d{2}-\d{4}$/.test(value)) {
     const [day, month, year] = value.split("-");
     date = new Date(`${year}-${month}-${day}`);
   }
-  // 🔥 Case 2: ISO or Jira format (YYYY-MM-DD or with time)
+  // Case 2: ISO or Jira format (YYYY-MM-DD or with time)
   else if (/^\d{4}-\d{2}-\d{2}/.test(value)) {
     date = new Date(value);
   }
@@ -131,7 +149,7 @@ const monthMap = {};
       {monthData.length > 0 && (
         <div style={{ marginBottom: "40px" }}>
           <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
-            Month-on-Month Issue Trend (Click to Filter)
+            Month-on-Month Issue Trend 
           </h2>
 
           <ResponsiveContainer width="100%" height={350}>
@@ -144,6 +162,12 @@ const monthMap = {};
                 dataKey="count"
                 onClick={(data) => {
                   if (!data) return;
+
+                  console.log(
+    "Clicked month bar:",
+    "Displayed:", data.month,
+    "Key set to:", data.key
+  );
 
                   if (selectedMonthKey === data.key) {
                     setSelectedMonthKey(null);
@@ -170,41 +194,6 @@ const monthMap = {};
       )}
 
       {/* Row 1 */}
-      <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
-        <div style={{ flex: "1 1 45%", minWidth: "320px" }}>
-          <h3 style={{ textAlign: "center", marginBottom: "12px" }}>
-            Issue Type Distribution
-          </h3>
-          <ResponsiveContainer width="100%" height={220}>
-            <BarChart data={issueTypes} layout="vertical" margin={commonMargin}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" />
-              <YAxis type="category" dataKey="name" width={120} />
-              <Tooltip />
-              <Bar dataKey="value" fill={COLORS.primary}>
-                <LabelList dataKey="value" position="right" />
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-
-        {/* <div style={{ flex: "1 1 45%", minWidth: "320px" }}>
-          <h3 style={{ textAlign: "center", marginBottom: "12px" }}>
-            Priority Distribution
-          </h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={priorities} layout="vertical" margin={commonMargin}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" />
-              <YAxis type="category" dataKey="name" width={120} />
-              <Tooltip />
-              <Bar dataKey="value" fill={COLORS.success}>
-                <LabelList dataKey="value" position="right" />
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-        </div> */}
-      </div>
 
       {/* Row 2 */}
       <div

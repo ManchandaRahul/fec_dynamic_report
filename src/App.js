@@ -16,6 +16,8 @@ function App() {
   const [selectedModule, setSelectedModule] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [selectedMonthKey, setSelectedMonthKey] = useState(null);
+
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -64,22 +66,27 @@ const prepareDashboardData = (combined) => {
   const cleaned = combined
     .map((row) => {
       // 🔹 Smart field matcher (case + trim safe)
-      const getField = (possibleNames) => {
-        const normalizedRow = {};
+const getField = (possibleNames) => {
+  const normalizedRow = {};
 
-        Object.keys(row).forEach((key) => {
-          normalizedRow[key.trim().toLowerCase()] = row[key];
-        });
+  Object.keys(row).forEach((key) => {
+    normalizedRow[key.trim().toLowerCase()] = row[key];
+  });
 
-        for (const name of possibleNames) {
-          const value = normalizedRow[name.toLowerCase()];
-          if (value !== undefined && value !== null && value !== "") {
-            return value;
-          }
+  for (const key in normalizedRow) {
+    for (const name of possibleNames) {
+      if (key.includes(name.toLowerCase())) {
+        const value = normalizedRow[key];
+        if (value !== undefined && value !== null && value !== "") {
+          return value;
         }
+      }
+    }
+  }
 
-        return "";
-      };
+  return "";
+};
+
 
       /* ----------------------------------------------------
          🔥 MODULE-WISE DATE HANDLING (RESTORED)
@@ -109,8 +116,6 @@ const prepareDashboardData = (combined) => {
         endDate = getField([
           "Due date",
           "Due Date",
-          "Updated",
-          "updated"
         ]);
       }
       else {
@@ -284,11 +289,55 @@ const processAllFiles = async () => {
 const getFilteredData = () => {
   if (!processedData || !selectedModule) return null;
 
-  const filteredRows = processedData.raw.filter(
+  // Always start from full module data
+  const moduleRows = processedData.raw.filter(
     (row) => row.module === selectedModule
   );
 
-  // Recalculate stats WITHOUT reprocessing structure
+  let filteredRows = moduleRows;
+
+// 🔥 Apply month filter ONLY for M&S
+// 🔥 Apply month filter ONLY for M&S
+if (selectedModule === "M&S Track" && selectedMonthKey) {
+  filteredRows = moduleRows.filter((row) => {
+    if (!row.StartDate || typeof row.StartDate !== "string") {
+      return false;
+    }
+
+    // AFTER — strip time before anything else
+const value = row.StartDate.trim();
+const datePart = value.split(" ")[0]; // "07-06-2024 00:00" → "07-06-2024"
+let date;
+
+if (/^\d{2}-\d{2}-\d{4}$/.test(datePart)) {
+  const [day, month, year] = datePart.split("-");
+  date = new Date(`${year}-${month}-${day}`);
+}
+else if (/^\d{4}-\d{2}-\d{2}/.test(datePart)) {
+  date = new Date(datePart);
+}
+else {
+  date = new Date(datePart);
+}
+
+    if (!date || isNaN(date.getTime())) {
+      return false;
+    }
+
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+
+    const rowMonthKey = `${year}-${String(month).padStart(2, "0")}`;
+    console.log(
+  row.IssueKey || "(no key)",
+  "StartDate:", row.StartDate,
+  "→ calculated key:", rowMonthKey,
+  "selected key:", selectedMonthKey,
+  rowMonthKey === selectedMonthKey ? "→ KEEP" : "→ discard"
+);
+    return rowMonthKey === selectedMonthKey;
+  });
+}
   const countBy = (key) => {
     const map = {};
     filteredRows.forEach((row) => {
@@ -317,15 +366,14 @@ const getFilteredData = () => {
     typeData: countBy("IssueType"),
     resolutionData: countBy("Resolution"),
     assigneeData: [],
-    totalTimeSpent: filteredRows.reduce(
-      (sum, row) => sum + row.TimeSpent,
-      0
-    ),
+    totalTimeSpent: filteredRows.reduce((sum, row) => sum + row.TimeSpent, 0),
   };
 };
 
 
-  const filteredData = getFilteredData();
+// ← This line must be OUTSIDE the function
+const filteredData = getFilteredData();
+
 
   return (
     <div
@@ -502,7 +550,10 @@ const getFilteredData = () => {
             </h3>
             <select
               value={selectedModule}
-              onChange={(e) => setSelectedModule(e.target.value)}
+              onChange={(e) => {
+                setSelectedModule(e.target.value);
+                 setSelectedMonthKey(null); // restore this
+              }}
               style={{
                 width: "100%",
                 maxWidth: "400px",
@@ -525,44 +576,32 @@ const getFilteredData = () => {
         {/* Dashboard content - original tighter style */}
         {processedData ? (
           selectedModule ? (
-            <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1.5rem" }}>
-              <div
-                style={{
-                  background: "white",
-                  borderRadius: "16px",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-                  padding: "1.5rem",
-                }}
-              >
-                <KPI data={filteredData} />
-              </div>
+<div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1.5rem" }}>
 
-              <div
-                style={{
-                  background: "white",
-                  borderRadius: "16px",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-                  padding: "1.5rem",
-                }}
-              >
-                <Charts data={filteredData} />
-              </div>
+  <div style={{ background: "white", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.08)", padding: "1.5rem" }}>
+    <KPI data={filteredData} />
+  </div>
 
-              <div
-                style={{
-                  background: "white",
-                  borderRadius: "16px",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-                  padding: "1.5rem",
-                }}
-              >
-                <Table
-                  data={filteredData?.raw || []}
-                  currentModule={selectedModule}
-                  // key={selectedModule}
-                />
-              </div>
-            </div>
+  <div style={{ background: "white", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.08)", padding: "1.5rem" }}>
+<Charts
+  moduleData={processedData}   // full dataset
+  filteredData={filteredData}  // filtered for KPI + table
+  selectedModule={selectedModule}
+  selectedMonthKey={selectedMonthKey}
+  setSelectedMonthKey={setSelectedMonthKey}
+/>
+
+
+  </div>
+
+  <div style={{ background: "white", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.08)", padding: "1.5rem" }}>
+    <Table
+      data={filteredData?.raw || []}
+      currentModule={selectedModule}
+    />
+  </div>
+
+</div>
           ) : (
             <div
               style={{
