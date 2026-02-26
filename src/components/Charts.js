@@ -25,104 +25,95 @@ function Charts({
   selectedMonthKey,
   setSelectedMonthKey,
 }) 
-
- {
+{
   if (!moduleData || !filteredData) return null;
 
+  // Commented out — unused variables causing no-unused-vars error
+  // const issueTypesRaw = filteredData?.typeData || [];
 
-  const issueTypesRaw = filteredData?.typeData || [];
+  // const desiredIssueTypes = ["Story", "Task", "Sub-task"];
 
-// const desiredIssueTypes = ["Story", "Task", "Sub-task"];
+  // const typeMap = new Map(
+  //   issueTypesRaw.map((item) => [item.name, item.value])
+  // );
 
-// const typeMap = new Map(
-//   issueTypesRaw.map((item) => [item.name, item.value])
-// );
+  // const issueTypes = desiredIssueTypes.map((name) => ({
+  //   name,
+  //   value: typeMap.get(name) ?? 0,
+  // }));
 
-// const issueTypes = desiredIssueTypes.map((name) => ({
-//   name,
-//   value: typeMap.get(name) ?? 0,
-// }));
-
-
-
-const doneStatuses = (filteredData?.statusData || [])
-
+  const doneStatuses = (filteredData?.statusData || [])
     .filter((s) => String(s.name).toLowerCase().includes("done"))
     .sort((a, b) => b.value - a.value);
 
   /* ---------------- FORCE ALL PENDING STATUS TYPES ---------------- */
 
-const desiredPendingStatuses = [
-  "To Do",
-  "UAT TO DO",
-  "Development In Progress",
-  "Testing TO DO",
-];
+  const desiredPendingStatuses = [
+    "To Do",
+    "UAT TO DO",
+    "Development In Progress",
+    "Testing TO DO",
+  ];
 
-const pendingMap = new Map(
-  (filteredData?.statusData || [])
-    .filter((s) => !String(s.name).toLowerCase().includes("done"))
-    .map((item) => [item.name, item.value])
-);
+  const pendingMap = new Map(
+    (filteredData?.statusData || [])
+      .filter((s) => !String(s.name).toLowerCase().includes("done"))
+      .map((item) => [item.name, item.value])
+  );
 
-
-
-const pendingStatuses = desiredPendingStatuses.map((status) => ({
-  name: status,
-  value: pendingMap.get(status) ?? 0,
-}));
-
+  const pendingStatuses = desiredPendingStatuses.map((status) => ({
+    name: status,
+    value: pendingMap.get(status) ?? 0,
+  }));
 
   const commonMargin = { top: 20, right: 20, left: 5, bottom: 20 };
 
-
   // 🔥 UNIVERSAL Month Logic (for ALL modules)
-const monthMap = {};
+  const monthMap = {};
 
-const moduleRows = (moduleData?.raw || []).filter(
-  (row) => row.module === selectedModule
-);
+  const moduleRows = (moduleData?.raw || []).filter(
+    (row) => row.module === selectedModule
+  );
 
-moduleRows.forEach((row) => {
-  if (!row.StartDate) return;
+  moduleRows.forEach((row) => {
+    if (!row.StartDate) return;
 
-  let date;
+    let date;
 
-  // Remove timestamp first — same as in App.jsx
-  const value = row.StartDate.trim().split(" ")[0];
+    // Remove timestamp first — same as in App.jsx
+    const value = row.StartDate.trim().split(" ")[0];
 
-  // Case 1: DD-MM-YYYY
-  if (/^\d{2}-\d{2}-\d{4}$/.test(value)) {
-    const [day, month, year] = value.split("-");
-    date = new Date(`${year}-${month}-${day}`);
-  }
-  // Case 2: ISO or Jira format (YYYY-MM-DD or with time)
-  else if (/^\d{4}-\d{2}-\d{2}/.test(value)) {
-    date = new Date(value);
-  }
-  else {
-    date = new Date(value);
-  }
+    // Case 1: DD-MM-YYYY
+    if (/^\d{2}-\d{2}-\d{4}$/.test(value)) {
+      const [day, month, year] = value.split("-");
+      date = new Date(`${year}-${month}-${day}`);
+    }
+    // Case 2: ISO or Jira format (YYYY-MM-DD or with time)
+    else if (/^\d{4}-\d{2}-\d{2}/.test(value)) {
+      date = new Date(value);
+    }
+    else {
+      date = new Date(value);
+    }
 
-  if (!date || isNaN(date)) return;
+    if (!date || isNaN(date)) return;
 
-  const year = date.getFullYear();
-  const month = date.getMonth();
+    const year = date.getFullYear();
+    const month = date.getMonth();
 
-  const monthKey = `${year}-${String(month + 1).padStart(2, "0")}`;
+    const monthKey = `${year}-${String(month + 1).padStart(2, "0")}`;
 
-  if (!monthMap[monthKey]) {
-    monthMap[monthKey] = {
-      key: monthKey,
-      year,
-      month,
-      count: 0,
-    };
-  }
+    if (!monthMap[monthKey]) {
+      monthMap[monthKey] = {
+        key: monthKey,
+        year,
+        month,
+        count: 0,
+      };
+    }
 
-  monthMap[monthKey].count += 1;
-});
-
+    monthMap[monthKey].count += 1;
+  });
 
   const monthData = Object.values(monthMap)
     .sort((a, b) => {
@@ -164,10 +155,10 @@ moduleRows.forEach((row) => {
                   if (!data) return;
 
                   console.log(
-    "Clicked month bar:",
-    "Displayed:", data.month,
-    "Key set to:", data.key
-  );
+                    "Clicked month bar:",
+                    "Displayed:", data.month,
+                    "Key set to:", data.key
+                  );
 
                   if (selectedMonthKey === data.key) {
                     setSelectedMonthKey(null);
@@ -221,51 +212,50 @@ moduleRows.forEach((row) => {
           </ResponsiveContainer>
         </div>
 
-<div style={{ flex: "1 1 45%", minWidth: "320px" }}>
-  <h3 style={{ textAlign: "center", marginBottom: "12px" }}>
-    Pending / In Progress Tasks
-  </h3>
+        <div style={{ flex: "1 1 45%", minWidth: "320px" }}>
+          <h3 style={{ textAlign: "center", marginBottom: "12px" }}>
+            Pending / In Progress Tasks
+          </h3>
 
-  {pendingStatuses.length === 0 ? (
-    <div
-      style={{
-        height: 260,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "#f0fdf4",
-        borderRadius: "12px",
-        border: "1px solid #bbf7d0",
-        color: "#166534",
-        fontWeight: "600",
-        fontSize: "1.05rem",
-        textAlign: "center",
-        padding: "20px",
-      }}
-    >
-      All tasks completed.
-      <br />
-      No pending or in-progress items.
-    </div>
-  ) : (
-    <ResponsiveContainer width="100%" height={260}>
-      <BarChart
-        data={pendingStatuses}
-        layout="vertical"
-        margin={commonMargin}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis type="number" />
-        <YAxis type="category" dataKey="name" width={120} />
-        <Tooltip />
-        <Bar dataKey="value" fill={COLORS.warning} barSize={28}>
-          <LabelList dataKey="value" position="right" />
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
-  )}
-</div>
-
+          {pendingStatuses.length === 0 ? (
+            <div
+              style={{
+                height: 260,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "#f0fdf4",
+                borderRadius: "12px",
+                border: "1px solid #bbf7d0",
+                color: "#166534",
+                fontWeight: "600",
+                fontSize: "1.05rem",
+                textAlign: "center",
+                padding: "20px",
+              }}
+            >
+              All tasks completed.
+              <br />
+              No pending or in-progress items.
+            </div>
+          ) : (
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart
+                data={pendingStatuses}
+                layout="vertical"
+                margin={commonMargin}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis type="number" />
+                <YAxis type="category" dataKey="name" width={120} />
+                <Tooltip />
+                <Bar dataKey="value" fill={COLORS.warning} barSize={28}>
+                  <LabelList dataKey="value" position="right" />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          )}
+        </div>
       </div>
     </div>
   );
