@@ -59,13 +59,12 @@ const formatDate = (value) => {
   const filteredRows = useMemo(() => {
     return rows.filter((row) => {
       return (
-        (!issueTypeFilter || row.IssueType === issueTypeFilter) &&
-        (!statusFilter || row.Status === statusFilter) &&
-        (!priorityFilter || row.Priority === priorityFilter) &&
-        (!assigneeFilter || row.Assignee === assigneeFilter)
+
+        (!statusFilter || row.Status === statusFilter) 
+
       );
     });
-  }, [rows, issueTypeFilter, statusFilter, priorityFilter, assigneeFilter]);
+  }, [rows,statusFilter]);
 
   const handleExportExcel = () => {
     if (filteredRows.length === 0) {
