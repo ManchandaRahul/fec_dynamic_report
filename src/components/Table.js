@@ -9,10 +9,10 @@ function Table({ data, currentModule = "All" }) {
   const [openRow, setOpenRow] = useState(null);
 
   // 🔥 NEW FILTER STATES (Added Only)
-  const [issueTypeFilter, setIssueTypeFilter] = useState("");
+  // const [issueTypeFilter, setIssueTypeFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
-  const [priorityFilter, setPriorityFilter] = useState("");
-  const [assigneeFilter, setAssigneeFilter] = useState("");
+  // const [priorityFilter, setPriorityFilter] = useState("");
+  // const [assigneeFilter, setAssigneeFilter] = useState("");
 
   // ✅ Safe Date Formatter (DD-MM-YYYY only, no timezone issues)
 // ✅ Strict DD-MM-YYYY Safe Formatter
