@@ -136,7 +136,9 @@ const getField = (possibleNames) => {
           "Issue key",
           "IssueKey",
           "issue key",
-          "Issue Key"
+          "Issue Key",
+            "\uFEFFIssue Key",   // ← ADD THIS (BOM prefix for first column)
+  "\uFEFFIssue key",
         ]),
 
         Summary: getField(["Summary", "summary"]),
@@ -158,9 +160,10 @@ const getField = (possibleNames) => {
         Description: (
           getField(["Description", "description"]) || ""
         )
-          .replace(/[^a-zA-Z0-9[\] ]/g, "")
-          .replace(/\s+/g, " ")
-          .trim(),
+          // .replace(/[^a-zA-Z0-9[\] ]/g, "")
+          // .replace(/\s+/g, " ")
+          // .trim()
+          ,
 
         TimeSpent: parseInt(
           getField(["Time Spent", "Σ Time Spent"]) || "0",
@@ -177,11 +180,11 @@ const getField = (possibleNames) => {
         EndDate: endDate,
       };
     })
-    .filter((row) => {
-      const hasKey = (row.IssueKey || "").trim().length > 0;
-      const hasSummary = (row.Summary || "").trim().length > 2;
-      return hasKey && hasSummary;
-    });
+    // .filter((row) => {
+    //   const hasKey = (row.IssueKey || "").trim().length > 0;
+    //   const hasSummary = (row.Summary || "").trim().length > 2;
+    //   return hasKey && hasSummary;
+    // });
 
   /* ----------------------------------------------------
      🔥 COUNTING LOGIC (UNCHANGED STRUCTURE)
@@ -272,6 +275,7 @@ const processAllFiles = async () => {
     const prepared = prepareDashboardData(combined);
     setProcessedData(prepared);
     setSelectedModule("");
+    setSelectedMonthKey(null);
 
     // ← This is the missing part — trigger JSON download
     downloadProcessedJson(prepared);
@@ -288,7 +292,7 @@ const processAllFiles = async () => {
 
 const getFilteredData = () => {
   if (!processedData || !selectedModule) return null;
-
+  console.log("Available modules:", [...new Set(processedData.raw.map(r => r.module))]);
   // Always start from full module data
   const moduleRows = processedData.raw.filter(
     (row) => row.module === selectedModule

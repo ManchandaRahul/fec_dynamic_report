@@ -76,7 +76,6 @@ const formatDate = (value) => {
     const exportData = filteredRows.map((row) => ({
       "Issue Key": row.IssueKey || "-",
       Summary: row.Summary || "-",
-      "Issue Type": row.IssueType || "Unknown",
       Status: row.Status || "Unknown",
       Priority: row.Priority || "Unknown",
       Assignee: row.Assignee || "Unassigned",
@@ -112,32 +111,45 @@ const formatDate = (value) => {
         boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
       }}
     >
-      {/* 🔥 FILTER SECTION (NEW) */}
+   {/* ✅ Filter by Status */}
       <div
         style={{
           display: "flex",
           gap: "12px",
           flexWrap: "wrap",
           marginBottom: "20px",
+          alignItems: "center",
         }}
       >
-        Filter by:
-        <select value={issueTypeFilter} onChange={(e) => setIssueTypeFilter(e.target.value)}>
-          <option value="">All Issue Types</option>
-          {uniqueValues("IssueType").map((val) => (
+        <span style={{ fontWeight: "500" }}>Filter by:</span>
+        <select
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value)}
+          style={{
+            padding: "6px 10px",
+            borderRadius: "6px",
+            border: "1px solid #d1d5db",
+            fontSize: "0.9rem",
+          }}
+        >
+          <option value="">All Statuses</option>
+          {uniqueValues("Status").map((val) => (
             <option key={val}>{val}</option>
           ))}
         </select>
 
         <button
-          onClick={() => {
-            setIssueTypeFilter("");
-            setStatusFilter("");
-            setPriorityFilter("");
-            setAssigneeFilter("");
+          onClick={() => setStatusFilter("")}
+          style={{
+            padding: "6px 12px",
+            borderRadius: "6px",
+            border: "1px solid #d1d5db",
+            background: "#f3f4f6",
+            cursor: "pointer",
+            fontSize: "0.9rem",
           }}
         >
-          Clear Filters
+          Clear Filter
         </button>
       </div>
 
@@ -189,7 +201,6 @@ const formatDate = (value) => {
             <colgroup>
               <col style={{ width: "120px" }} />
               <col style={{ width: "30%" }} />
-              <col style={{ width: "130px" }} />
               <col style={{ width: "150px" }} />
               <col style={{ width: "120px" }} />
               <col style={{ width: "160px" }} />
@@ -202,7 +213,6 @@ const formatDate = (value) => {
                 {[
                   "Issue Key",
                   "Summary",
-                  "Issue Type",
                   "Status",
                   "Priority",
                   "Assignee",
@@ -243,9 +253,6 @@ const formatDate = (value) => {
                     <td style={{ padding: "12px" }}>{row.IssueKey || "-"}</td>
                     <td style={{ padding: "12px", wordBreak: "break-word" }}>
                       {row.Summary || "-"}
-                    </td>
-                    <td style={{ padding: "12px" }}>
-                      {row.IssueType || "Unknown"}
                     </td>
                     <td style={{ padding: "12px" }}>
                       {row.Status || "Unknown"}

@@ -19,11 +19,11 @@ function KPI({ data }) {
       value: data.statusData.length,
       color: "#10b981"
     },
-    {
-      label: "Active Assignees",
-      value: data.assigneeData.length,
-      color: "#f59e0b"
-    }
+    // {
+    //   label: "Active Assignees",
+    //   value: data.assigneeData.length,
+    //   color: "#f59e0b"
+    // }
   ];
 
   return (
