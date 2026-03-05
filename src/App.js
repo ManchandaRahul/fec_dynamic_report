@@ -416,19 +416,19 @@ const filteredData = getFilteredData();
               letterSpacing: "0.5px",
             }}
           >
-            Module Dashboard
+            FEC
           </h1>
-<img
-  src={LogisyncLogo}
-  alt="Logisync"
-  style={{
-    height: "62px",
-    objectFit: "contain",
-    position: "absolute",
-    left: "50%",
-    transform: "translateX(-50%)", // ✅ TRUE CENTER
-  }}
-/>
+<h1
+            style={{
+              fontSize: "1.8rem",
+              fontWeight: "700",
+              margin: 0,
+              letterSpacing: "0.5px",
+            }}
+          >
+          Modules Dashboard
+          </h1>         
+
         </div>
 
       </div>
@@ -600,6 +600,7 @@ const filteredData = getFilteredData();
 
   <div style={{ background: "white", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.08)", padding: "1.5rem" }}>
     <Table
+    key={`table-${selectedModule}`}
       data={filteredData?.raw || []}
       currentModule={selectedModule}
     />
