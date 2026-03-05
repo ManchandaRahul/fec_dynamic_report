@@ -4,7 +4,6 @@ import Charts from "./components/Charts";
 import Table from "./components/Table";
 import Papa from "papaparse";
 
-import LogisyncLogo from "./assets/logisync.jpeg";
 import KaruyakiLogo1 from "./assets/kup.png";
 function App() {
   const [csv1, setCsv1] = useState(null);
