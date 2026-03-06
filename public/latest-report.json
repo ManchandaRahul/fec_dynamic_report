@@ -1463,7 +1463,7 @@
       "IssueKey": "LGSN-605",
       "Summary": "BTBT & Import: Workflow Name Master UI",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1499,7 +1499,7 @@
       "IssueKey": "LGSN-603",
       "Summary": "Import: [enhancement] milestone master updates",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1571,7 +1571,7 @@
       "IssueKey": "LGSN-599",
       "Summary": "BTBT: [enhancement] Update Target DLY Date",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1607,7 +1607,7 @@
       "IssueKey": "LGSN-597",
       "Summary": "Import Module:[enhancement] WH verify GRN",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1733,7 +1733,7 @@
       "IssueKey": "LGSN-590",
       "Summary": "Import Module(Container)[enhancement]",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1823,7 +1823,7 @@
       "IssueKey": "LGSN-585",
       "Summary": "Import:[enhancement]Final DSR Excel file - for RPA1 auto upload and for Manual upload",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1841,7 +1841,7 @@
       "IssueKey": "LGSN-584",
       "Summary": "BTBT:[enhancement] W/H person mail send with attachments",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1859,7 +1859,7 @@
       "IssueKey": "LGSN-577",
       "Summary": "BTBT: [enhancement] BTBT points - Orders pending for preparation",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1895,7 +1895,7 @@
       "IssueKey": "LGSN-575",
       "Summary": "Import module:[RP1 + Workflow auto assigned]",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1931,7 +1931,7 @@
       "IssueKey": "LGSN-573",
       "Summary": "OOC tab Modifications :[enhancement]",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1967,7 +1967,7 @@
       "IssueKey": "LGSN-571",
       "Summary": "Import: P2F tab new implementations",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -1985,7 +1985,7 @@
       "IssueKey": "LGSN-570",
       "Summary": "Import Basic Structure - Field Tasks Scheduler",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2003,7 +2003,7 @@
       "IssueKey": "LGSN-569",
       "Summary": "BTBT: annexure data issue",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2021,7 +2021,7 @@
       "IssueKey": "LGSN-568",
       "Summary": "BTBT: seller letter issues",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2039,7 +2039,7 @@
       "IssueKey": "LGSN-567",
       "Summary": "ETA and IGM excel reports",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2057,7 +2057,7 @@
       "IssueKey": "LGSN-566",
       "Summary": "BTBT: [live support] Btbt Download Bulk Document changes",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2111,7 +2111,7 @@
       "IssueKey": "LGSN-563",
       "Summary": "IGM / ETA tab : tab merging needed as given by ashish sir",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2129,7 +2129,7 @@
       "IssueKey": "LGSN-562",
       "Summary": "BTBT: button layout fixation",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2165,7 +2165,7 @@
       "IssueKey": "LGSN-560",
       "Summary": "BTBT: [feedback] pointer given by ashish sir ",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2201,7 +2201,7 @@
       "IssueKey": "LGSN-558",
       "Summary": "BTBT:[HTML]layout for BTBT order create preview",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2219,7 +2219,7 @@
       "IssueKey": "LGSN-557",
       "Summary": "BTBT: [live support] vehicle assignment issue",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "Rohan Kadam",
@@ -2237,7 +2237,7 @@
       "IssueKey": "LGSN-556",
       "Summary": "BTBT: [live support] icegate btbt excel issue ",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2255,7 +2255,7 @@
       "IssueKey": "LGSN-555",
       "Summary": "BTBT: [enhancement] btbt points given by ashish sir",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2327,7 +2327,7 @@
       "IssueKey": "LGSN-551",
       "Summary": "Employee master - Login setup tab",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -2345,7 +2345,7 @@
       "IssueKey": "LGSN-550",
       "Summary": "Employee master [backend] : [HTML]",
       "IssueType": "Story",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11065,10 +11065,10 @@
       "TimeSpent": 0,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "02/Mar/26 7:19 PM",
-      "Updated": "05/Mar/26 5:54 PM",
-      "StartDate": "02/Mar/26 12:00 AM",
-      "EndDate": "02/Mar/26 12:00 AM"
+      "Created": "02-03-2026 19:19",
+      "Updated": "05-03-2026 17:54",
+      "StartDate": "02-03-2026 00:00",
+      "EndDate": "02-03-2026 00:00"
     },
     {
       "module": "Payment Module",
@@ -11083,10 +11083,10 @@
       "TimeSpent": 0,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "25/Feb/26 10:32 AM",
-      "Updated": "25/Feb/26 10:37 AM",
-      "StartDate": "24/Feb/26 12:00 AM",
-      "EndDate": "26/Feb/26 12:00 AM"
+      "Created": "25-02-2026 10:32",
+      "Updated": "25-02-2026 10:37",
+      "StartDate": "24-02-2026 00:00",
+      "EndDate": "26-02-2026 00:00"
     },
     {
       "module": "Payment Module",
@@ -11101,10 +11101,10 @@
       "TimeSpent": 0,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "19/Jan/26 4:59 PM",
-      "Updated": "19/Jan/26 5:00 PM",
-      "StartDate": "16/Jan/26 12:00 AM",
-      "EndDate": "20/Jan/26 12:00 AM"
+      "Created": "19-01-2026 16:59",
+      "Updated": "19-01-2026 17:00",
+      "StartDate": "16-01-2026 00:00",
+      "EndDate": "20-01-2026 00:00"
     },
     {
       "module": "Payment Module",
@@ -11119,10 +11119,10 @@
       "TimeSpent": 32400,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "16/Jan/26 11:21 AM",
-      "Updated": "04/Feb/26 11:14 AM",
-      "StartDate": "15/Jan/26 12:00 AM",
-      "EndDate": "15/Jan/26 12:00 AM"
+      "Created": "16-01-2026 11:21",
+      "Updated": "04-02-2026 11:14",
+      "StartDate": "15-01-2026 00:00",
+      "EndDate": "15-01-2026 00:00"
     },
     {
       "module": "Payment Module",
@@ -11137,10 +11137,10 @@
       "TimeSpent": 194400,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "10/Jan/26 7:46 PM",
-      "Updated": "16/Jan/26 11:17 AM",
-      "StartDate": "07/Jan/26 12:00 AM",
-      "EndDate": "14/Jan/26 12:00 AM"
+      "Created": "10-01-2026 19:46",
+      "Updated": "16-01-2026 11:17",
+      "StartDate": "07-01-2026 00:00",
+      "EndDate": "14-01-2026 00:00"
     },
     {
       "module": "Payment Module",
@@ -11155,17 +11155,17 @@
       "TimeSpent": 129600,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "05/Jan/26 11:16 AM",
-      "Updated": "16/Jan/26 11:02 AM",
-      "StartDate": "02/Jan/26 12:00 AM",
-      "EndDate": "06/Jan/26 12:00 AM"
+      "Created": "05-01-2026 11:16",
+      "Updated": "16-01-2026 11:02",
+      "StartDate": "02-01-2026 00:00",
+      "EndDate": "06-01-2026 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-36",
       "Summary": "PR Module [enhancement]- Stamp Duty / State Excise",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11173,17 +11173,17 @@
       "TimeSpent": 97200,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "29/Dec/25 4:58 PM",
-      "Updated": "05/Jan/26 11:15 AM",
-      "StartDate": "29/Dec/25 12:00 AM",
-      "EndDate": "31/Dec/25 12:00 AM"
+      "Created": "29-12-2025 16:58",
+      "Updated": "05-01-2026 11:15",
+      "StartDate": "29-12-2025 00:00",
+      "EndDate": "31-12-2025 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-35",
       "Summary": "Payment:[enhancement] - WORKING ON EXCEL OF PAYMENT REQUEST",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11191,10 +11191,10 @@
       "TimeSpent": 129600,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "29/Dec/25 4:47 PM",
-      "Updated": "29/Dec/25 4:57 PM",
-      "StartDate": "24/Dec/25 12:00 AM",
-      "EndDate": "27/Dec/25 12:00 AM"
+      "Created": "29-12-2025 16:47",
+      "Updated": "29-12-2025 16:57",
+      "StartDate": "24-12-2025 00:00",
+      "EndDate": "27-12-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11209,10 +11209,10 @@
       "TimeSpent": 64800,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "23/Dec/25 11:17 AM",
-      "Updated": "29/Dec/25 10:51 AM",
-      "StartDate": "22/Dec/25 12:00 AM",
-      "EndDate": "23/Dec/25 12:00 AM"
+      "Created": "23-12-2025 11:17",
+      "Updated": "29-12-2025 10:51",
+      "StartDate": "22-12-2025 00:00",
+      "EndDate": "23-12-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11227,17 +11227,17 @@
       "TimeSpent": 129600,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "15/Dec/25 5:54 PM",
-      "Updated": "15/Dec/25 5:57 PM",
-      "StartDate": "03/Dec/25 12:00 AM",
-      "EndDate": "10/Dec/25 12:00 AM"
+      "Created": "15-12-2025 17:54",
+      "Updated": "15-12-2025 17:57",
+      "StartDate": "03-12-2025 00:00",
+      "EndDate": "10-12-2025 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-32",
       "Summary": "Payment module:[development] PRS PDF",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11245,17 +11245,17 @@
       "TimeSpent": 129600,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "15/Dec/25 5:51 PM",
-      "Updated": "23/Dec/25 11:17 AM",
-      "StartDate": "11/Dec/25 12:00 AM",
-      "EndDate": "15/Dec/25 12:00 AM"
+      "Created": "15-12-2025 17:51",
+      "Updated": "23-12-2025 11:17",
+      "StartDate": "11-12-2025 00:00",
+      "EndDate": "15-12-2025 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-31",
       "Summary": "Payment Module:[feedback] PR Module Pointers",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11263,10 +11263,10 @@
       "TimeSpent": 0,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "15/Dec/25 5:41 PM",
-      "Updated": "23/Dec/25 11:16 AM",
-      "StartDate": "06/Dec/25 12:00 AM",
-      "EndDate": "15/Dec/25 12:00 AM"
+      "Created": "15-12-2025 17:41",
+      "Updated": "23-12-2025 11:16",
+      "StartDate": "06-12-2025 00:00",
+      "EndDate": "15-12-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11281,17 +11281,17 @@
       "TimeSpent": 0,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "15/Dec/25 4:11 PM",
-      "Updated": "04/Feb/26 11:15 AM",
-      "StartDate": "15/Dec/25 12:00 AM",
-      "EndDate": "19/Dec/25 12:00 AM"
+      "Created": "15-12-2025 16:11",
+      "Updated": "04-02-2026 11:15",
+      "StartDate": "15-12-2025 00:00",
+      "EndDate": "19-12-2025 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-29",
       "Summary": "PR module - TDS Config",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11299,17 +11299,17 @@
       "TimeSpent": 64800,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "25/Nov/25 10:38 AM",
-      "Updated": "27/Nov/25 7:42 PM",
-      "StartDate": "24/Nov/25 12:00 AM",
-      "EndDate": "26/Nov/25 12:00 AM"
+      "Created": "25-11-2025 10:38",
+      "Updated": "27-11-2025 19:42",
+      "StartDate": "24-11-2025 00:00",
+      "EndDate": "26-11-2025 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-28",
       "Summary": "PR - 2 pages [Verification and Booking / Paid Status]",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11317,10 +11317,10 @@
       "TimeSpent": 403200,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "14/Nov/25 12:55 PM",
-      "Updated": "15/Dec/25 11:42 AM",
-      "StartDate": "14/Nov/25 12:00 AM",
-      "EndDate": "02/Dec/25 12:00 AM"
+      "Created": "14-11-2025 12:55",
+      "Updated": "15-12-2025 11:42",
+      "StartDate": "14-11-2025 00:00",
+      "EndDate": "02-12-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11335,17 +11335,17 @@
       "TimeSpent": 5400,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "28/Oct/25 1:49 PM",
-      "Updated": "28/Oct/25 3:06 PM",
-      "StartDate": "24/Oct/25 12:00 AM",
-      "EndDate": "24/Oct/25 12:00 AM"
+      "Created": "28-10-2025 13:49",
+      "Updated": "28-10-2025 15:06",
+      "StartDate": "24-10-2025 00:00",
+      "EndDate": "24-10-2025 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-26",
       "Summary": "organisation feedback pointerts",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11353,10 +11353,10 @@
       "TimeSpent": 32400,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "13/Oct/25 4:59 PM",
-      "Updated": "13/Oct/25 5:01 PM",
-      "StartDate": "10/Oct/25 12:00 AM",
-      "EndDate": "10/Oct/25 12:00 AM"
+      "Created": "13-10-2025 16:59",
+      "Updated": "13-10-2025 17:01",
+      "StartDate": "10-10-2025 00:00",
+      "EndDate": "10-10-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11371,8 +11371,8 @@
       "TimeSpent": 0,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "13/Oct/25 1:26 PM",
-      "Updated": "13/Oct/25 1:26 PM",
+      "Created": "13-10-2025 13:26",
+      "Updated": "13-10-2025 13:26",
       "StartDate": "",
       "EndDate": ""
     },
@@ -11381,7 +11381,7 @@
       "IssueKey": "LPM-24",
       "Summary": "Kyc PDF pointers [feedback]",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11389,10 +11389,10 @@
       "TimeSpent": 14400,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "09/Oct/25 7:22 PM",
-      "Updated": "13/Oct/25 5:01 PM",
-      "StartDate": "09/Oct/25 12:00 AM",
-      "EndDate": "10/Oct/25 12:00 AM"
+      "Created": "09-10-2025 19:22",
+      "Updated": "13-10-2025 17:01",
+      "StartDate": "09-10-2025 00:00",
+      "EndDate": "10-10-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11407,17 +11407,17 @@
       "TimeSpent": 3600,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "08/Oct/25 7:33 PM",
-      "Updated": "08/Oct/25 7:35 PM",
-      "StartDate": "07/Oct/25 12:00 AM",
-      "EndDate": "07/Oct/25 12:00 AM"
+      "Created": "08-10-2025 19:33",
+      "Updated": "08-10-2025 19:35",
+      "StartDate": "07-10-2025 00:00",
+      "EndDate": "07-10-2025 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-22",
       "Summary": "organization pointers given by sneha",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11425,17 +11425,17 @@
       "TimeSpent": 64800,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "06/Oct/25 11:24 AM",
-      "Updated": "09/Oct/25 4:56 PM",
-      "StartDate": "06/Oct/25 12:00 AM",
-      "EndDate": "08/Oct/25 12:00 AM"
+      "Created": "06-10-2025 11:24",
+      "Updated": "09-10-2025 16:56",
+      "StartDate": "06-10-2025 00:00",
+      "EndDate": "08-10-2025 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-21",
       "Summary": "organization document tab pointers:[enhancement]",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11443,10 +11443,10 @@
       "TimeSpent": 32400,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "06/Oct/25 11:21 AM",
-      "Updated": "06/Oct/25 11:23 AM",
-      "StartDate": "04/Oct/25 12:00 AM",
-      "EndDate": "04/Oct/25 12:00 AM"
+      "Created": "06-10-2025 11:21",
+      "Updated": "06-10-2025 11:23",
+      "StartDate": "04-10-2025 00:00",
+      "EndDate": "04-10-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11461,10 +11461,10 @@
       "TimeSpent": 1800,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "06/Oct/25 11:10 AM",
-      "Updated": "06/Oct/25 11:12 AM",
-      "StartDate": "04/Oct/25 12:00 AM",
-      "EndDate": "04/Oct/25 12:00 AM"
+      "Created": "06-10-2025 11:10",
+      "Updated": "06-10-2025 11:12",
+      "StartDate": "04-10-2025 00:00",
+      "EndDate": "04-10-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11479,17 +11479,17 @@
       "TimeSpent": 1860,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "30/Sep/25 1:53 PM",
-      "Updated": "30/Sep/25 1:54 PM",
-      "StartDate": "30/Sep/25 12:00 AM",
-      "EndDate": "30/Sep/25 12:00 AM"
+      "Created": "30-09-2025 13:53",
+      "Updated": "30-09-2025 13:54",
+      "StartDate": "30-09-2025 00:00",
+      "EndDate": "30-09-2025 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-18",
       "Summary": "Payment request new layout [HTML]",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11497,10 +11497,10 @@
       "TimeSpent": 32400,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "30/Sep/25 12:32 PM",
-      "Updated": "10/Oct/25 6:03 PM",
-      "StartDate": "30/Sep/25 12:00 AM",
-      "EndDate": "10/Oct/25 12:00 AM"
+      "Created": "30-09-2025 12:32",
+      "Updated": "10-10-2025 18:03",
+      "StartDate": "30-09-2025 00:00",
+      "EndDate": "10-10-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11515,10 +11515,10 @@
       "TimeSpent": 97200,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "26/Sep/25 12:12 PM",
-      "Updated": "16/Dec/25 4:24 PM",
-      "StartDate": "26/Sep/25 12:00 AM",
-      "EndDate": "29/Sep/25 12:00 AM"
+      "Created": "26-09-2025 12:12",
+      "Updated": "16-12-2025 16:24",
+      "StartDate": "26-09-2025 00:00",
+      "EndDate": "29-09-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11533,17 +11533,17 @@
       "TimeSpent": 3600,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "22/Sep/25 1:53 PM",
-      "Updated": "22/Sep/25 1:54 PM",
-      "StartDate": "22/Sep/25 12:00 AM",
-      "EndDate": "22/Sep/25 12:00 AM"
+      "Created": "22-09-2025 13:53",
+      "Updated": "22-09-2025 13:54",
+      "StartDate": "22-09-2025 00:00",
+      "EndDate": "22-09-2025 00:00"
     },
     {
       "module": "Payment Module",
       "IssueKey": "LPM-15",
       "Summary": "Organisation master - all tabs dynamic",
       "IssueType": "Task",
-      "Status": "UAT TO DO",
+      "Status": "UAT DONE",
       "Priority": "Medium",
       "Resolution": "",
       "Assignee": "tejaswinipapal",
@@ -11551,10 +11551,10 @@
       "TimeSpent": 226800,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "15/Sep/25 5:53 PM",
-      "Updated": "30/Sep/25 5:58 PM",
-      "StartDate": "11/Sep/25 12:00 AM",
-      "EndDate": "25/Sep/25 12:00 AM"
+      "Created": "15-09-2025 17:53",
+      "Updated": "30-09-2025 17:58",
+      "StartDate": "11-09-2025 00:00",
+      "EndDate": "25-09-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11569,10 +11569,10 @@
       "TimeSpent": 259200,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "11/Sep/25 7:20 PM",
-      "Updated": "06/Oct/25 11:20 AM",
-      "StartDate": "11/Sep/25 12:00 AM",
-      "EndDate": "24/Sep/25 12:00 AM"
+      "Created": "11-09-2025 19:20",
+      "Updated": "06-10-2025 11:20",
+      "StartDate": "11-09-2025 00:00",
+      "EndDate": "24-09-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11587,10 +11587,10 @@
       "TimeSpent": 129600,
       "Reporter": "Ganesh Pitre",
       "Creator": "Ganesh Pitre",
-      "Created": "04/Sep/25 10:40 AM",
-      "Updated": "06/Oct/25 11:20 AM",
-      "StartDate": "04/Sep/25 12:00 AM",
-      "EndDate": "10/Sep/25 12:00 AM"
+      "Created": "04-09-2025 10:40",
+      "Updated": "06-10-2025 11:20",
+      "StartDate": "04-09-2025 00:00",
+      "EndDate": "10-09-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11605,10 +11605,10 @@
       "TimeSpent": 97200,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "01/Sep/25 4:44 PM",
-      "Updated": "06/Oct/25 11:20 AM",
-      "StartDate": "29/Aug/25 12:00 AM",
-      "EndDate": "02/Sep/25 12:00 AM"
+      "Created": "01-09-2025 16:44",
+      "Updated": "06-10-2025 11:20",
+      "StartDate": "29-08-2025 00:00",
+      "EndDate": "02-09-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11623,8 +11623,8 @@
       "TimeSpent": 0,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "29/Aug/25 6:48 PM",
-      "Updated": "16/Sep/25 10:51 AM",
+      "Created": "29-08-2025 18:48",
+      "Updated": "16-09-2025 10:51",
       "StartDate": "",
       "EndDate": ""
     },
@@ -11641,10 +11641,10 @@
       "TimeSpent": 21600,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "12/Aug/25 3:10 PM",
-      "Updated": "12/Aug/25 7:26 PM",
-      "StartDate": "12/Aug/25 12:00 AM",
-      "EndDate": "12/Aug/25 12:00 AM"
+      "Created": "12-08-2025 15:10",
+      "Updated": "12-08-2025 19:26",
+      "StartDate": "12-08-2025 00:00",
+      "EndDate": "12-08-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11659,10 +11659,10 @@
       "TimeSpent": 36000,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "11/Aug/25 12:18 PM",
-      "Updated": "11/Aug/25 12:25 PM",
-      "StartDate": "07/Aug/25 12:00 AM",
-      "EndDate": "08/Aug/25 12:00 AM"
+      "Created": "11-08-2025 12:18",
+      "Updated": "11-08-2025 12:25",
+      "StartDate": "07-08-2025 00:00",
+      "EndDate": "08-08-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11677,10 +11677,10 @@
       "TimeSpent": 3600,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "05/Aug/25 11:28 AM",
-      "Updated": "05/Aug/25 11:31 AM",
-      "StartDate": "04/Aug/25 12:00 AM",
-      "EndDate": "04/Aug/25 12:00 AM"
+      "Created": "05-08-2025 11:28",
+      "Updated": "05-08-2025 11:31",
+      "StartDate": "04-08-2025 00:00",
+      "EndDate": "04-08-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11695,10 +11695,10 @@
       "TimeSpent": 162000,
       "Reporter": "Ganesh Pitre",
       "Creator": "Ganesh Pitre",
-      "Created": "04/Aug/25 3:26 PM",
-      "Updated": "04/Aug/25 7:09 PM",
-      "StartDate": "14/Jul/25 12:00 AM",
-      "EndDate": "18/Jul/25 12:00 AM"
+      "Created": "04-08-2025 15:26",
+      "Updated": "04-08-2025 19:09",
+      "StartDate": "14-07-2025 00:00",
+      "EndDate": "18-07-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11713,10 +11713,10 @@
       "TimeSpent": 712800,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "31/Jul/25 10:24 AM",
-      "Updated": "17/Feb/26 11:05 AM",
-      "StartDate": "30/Jul/25 12:00 AM",
-      "EndDate": "18/Feb/26 12:00 AM"
+      "Created": "31-07-2025 10:24",
+      "Updated": "17-02-2026 11:05",
+      "StartDate": "30-07-2025 00:00",
+      "EndDate": "18-02-2026 00:00"
     },
     {
       "module": "Payment Module",
@@ -11731,10 +11731,10 @@
       "TimeSpent": 64800,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "28/Jul/25 1:54 PM",
-      "Updated": "31/Jul/25 10:24 AM",
-      "StartDate": "28/Jul/25 12:00 AM",
-      "EndDate": "29/Jul/25 12:00 AM"
+      "Created": "28-07-2025 13:54",
+      "Updated": "31-07-2025 10:24",
+      "StartDate": "28-07-2025 00:00",
+      "EndDate": "29-07-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11749,10 +11749,10 @@
       "TimeSpent": 162000,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "21/Jul/25 6:00 PM",
-      "Updated": "04/Feb/26 11:16 AM",
-      "StartDate": "21/Jul/25 12:00 AM",
-      "EndDate": "25/Jul/25 12:00 AM"
+      "Created": "21-07-2025 18:00",
+      "Updated": "04-02-2026 11:16",
+      "StartDate": "21-07-2025 00:00",
+      "EndDate": "25-07-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11767,10 +11767,10 @@
       "TimeSpent": 3600,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "21/Jul/25 10:14 AM",
-      "Updated": "21/Jul/25 10:35 AM",
-      "StartDate": "19/Jul/25 12:00 AM",
-      "EndDate": "19/Jul/25 12:00 AM"
+      "Created": "21-07-2025 10:14",
+      "Updated": "21-07-2025 10:35",
+      "StartDate": "19-07-2025 00:00",
+      "EndDate": "19-07-2025 00:00"
     },
     {
       "module": "Payment Module",
@@ -11785,25 +11785,21 @@
       "TimeSpent": 162000,
       "Reporter": "tejaswinipapal",
       "Creator": "tejaswinipapal",
-      "Created": "03/Jul/25 10:27 AM",
-      "Updated": "21/Jul/25 10:14 AM",
-      "StartDate": "14/Jul/25 12:00 AM",
-      "EndDate": "18/Jul/25 12:00 AM"
+      "Created": "03-07-2025 10:27",
+      "Updated": "21-07-2025 10:14",
+      "StartDate": "14-07-2025 00:00",
+      "EndDate": "18-07-2025 00:00"
     }
   ],
   "totalIssues": 655,
   "statusData": [
     {
+      "name": "UAT DONE",
+      "value": 299
+    },
+    {
       "name": "Development Done",
       "value": 263
-    },
-    {
-      "name": "UAT DONE",
-      "value": 262
-    },
-    {
-      "name": "UAT TO DO",
-      "value": 37
     },
     {
       "name": "To Do",
