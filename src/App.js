@@ -696,10 +696,10 @@ const filteredData = getFilteredData();
     onClick={scrollToTop}
     style={{
       position: "fixed",
-      bottom: "30px",
-      right: "30px",
+      bottom: "10px",
+      right: "10px",
       padding: "12px 16px",
-      fontSize: "18px",
+      fontSize: "10px",
       borderRadius: "8%",
       border: "none",
       background: "#2563eb",
