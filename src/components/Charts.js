@@ -128,7 +128,7 @@ const moduleDescription = moduleDescriptions[selectedModule] || "";
       {monthData.length > 0 && (
         <div style={{ marginBottom: "40px" }}>
           <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
-            Month-on-Month Issue Trend
+            Month-on-Month Tasks Trend
           </h2>
           {/* ✅ Dynamic description per module */}
 {moduleDescription && (
@@ -140,7 +140,13 @@ const moduleDescription = moduleDescriptions[selectedModule] || "";
           <ResponsiveContainer width="100%" height={350}>
             <BarChart data={monthData} margin={commonMargin}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" />
+<XAxis
+  dataKey="month"
+  interval={selectedModule === "M&S Track" ? 0 : "preserveEnd"}
+  angle={selectedModule === "M&S Track" ? -90 : 0}
+  textAnchor={selectedModule === "M&S Track" ? "end" : "middle"}
+  height={selectedModule === "M&S Track" ? 80 : 40}
+/>
               <YAxis />
               <Tooltip />
               <Bar

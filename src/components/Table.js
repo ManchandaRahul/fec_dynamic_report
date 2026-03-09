@@ -164,7 +164,7 @@ const formatDate = (value) => {
         }}
       >
         <h3 style={{ fontSize: "1.5rem", fontWeight: "600" }}>
-          Issues
+          Tasks as taken from Jira
         </h3>
 
         <button

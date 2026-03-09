@@ -5,15 +5,15 @@ function KPI({ data }) {
 
   const kpis = [
     {
-      label: "Total Issues",
+      label: "Total Tasks",
       value: data.totalIssues,
       color: "#1e3a8a"
     },
-    {
-      label: "Issue Types",
-      value: data.typeData.length,
-      color: "#3b82f6"
-    },
+    // {
+    //   label: "Issue Types",
+    //   value: data.typeData.length,
+    //   color: "#3b82f6"
+    // },
     {
       label: "Status Categories",
       value: data.statusData.length,

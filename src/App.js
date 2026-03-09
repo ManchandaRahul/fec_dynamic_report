@@ -16,6 +16,14 @@ function App() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [selectedMonthKey, setSelectedMonthKey] = useState(null);
+  const [showTopButton, setShowTopButton] = useState(false);
+
+  const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 
 
   useEffect(() => {
@@ -51,6 +59,20 @@ function App() {
     }
   }, [processedData]);
 
+  useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 400) {
+      setShowTopButton(true);
+    } else {
+      setShowTopButton(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   const parseCSVFile = (file) => {
     return new Promise((resolve) => {
       Papa.parse(file, {
@@ -67,6 +89,7 @@ const prepareDashboardData = (combined) => {
       // 🔹 Smart field matcher (case + trim safe)
 const getField = (possibleNames) => {
   const normalizedRow = {};
+
 
   Object.keys(row).forEach((key) => {
     normalizedRow[key.trim().toLowerCase()] = row[key];
@@ -668,6 +691,27 @@ const filteredData = getFilteredData();
           />
         </div>
       </div>
+      {showTopButton && (
+  <button
+    onClick={scrollToTop}
+    style={{
+      position: "fixed",
+      bottom: "30px",
+      right: "30px",
+      padding: "12px 16px",
+      fontSize: "18px",
+      borderRadius: "8%",
+      border: "none",
+      background: "#2563eb",
+      color: "white",
+      cursor: "pointer",
+      boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+      zIndex: 999,
+    }}
+  >
+    ↑ Back to Top
+  </button>
+)}
     </div>
   );
 }
