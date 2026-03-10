@@ -14,11 +14,11 @@ function KPI({ data }) {
     //   value: data.typeData.length,
     //   color: "#3b82f6"
     // },
-    {
-      label: "Status Categories",
-      value: data.statusData.length,
-      color: "#10b981"
-    },
+    // {
+    //   label: "Status Categories",
+    //   value: data.statusData.length,
+    //   color: "#10b981"
+    // },
     // {
     //   label: "Active Assignees",
     //   value: data.assigneeData.length,

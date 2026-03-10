@@ -124,7 +124,40 @@ const moduleDescription = moduleDescriptions[selectedModule] || "";
 
   return (
     <div>
-      {/* Month-on-Month Trend */}
+
+
+      {/* ✅ Task Status Overview — descending order, distinct colors */}
+      <div style={{ marginTop: "32px" }}>
+        <h2 style={{ textAlign: "center", marginBottom: "12px" }}>
+          Task Status Overview
+        </h2>
+        <ResponsiveContainer
+          width="100%"
+          height={Math.max(320, allStatusData.length * 55)}
+        >
+          <BarChart
+            data={allStatusData}
+            layout="vertical"
+            margin={commonMargin}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis type="number" />
+            <YAxis type="category" dataKey="name" width={160} />
+            <Tooltip />
+            <Bar dataKey="value" barSize={26}>
+              {allStatusData.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={STATUS_COLORS[index % STATUS_COLORS.length]}
+                />
+              ))}
+              <LabelList dataKey="value" position="right" />
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+            {/* Month-on-Month Trend */}
       {monthData.length > 0 && (
         <div style={{ marginBottom: "40px" }}>
           <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
@@ -176,37 +209,6 @@ const moduleDescription = moduleDescriptions[selectedModule] || "";
           </ResponsiveContainer>
         </div>
       )}
-
-      {/* ✅ Task Status Overview — descending order, distinct colors */}
-      <div style={{ marginTop: "32px" }}>
-        <h3 style={{ textAlign: "center", marginBottom: "12px" }}>
-          Task Status Overview
-        </h3>
-        <ResponsiveContainer
-          width="100%"
-          height={Math.max(320, allStatusData.length * 55)}
-        >
-          <BarChart
-            data={allStatusData}
-            layout="vertical"
-            margin={commonMargin}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis type="number" />
-            <YAxis type="category" dataKey="name" width={160} />
-            <Tooltip />
-            <Bar dataKey="value" barSize={26}>
-              {allStatusData.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={STATUS_COLORS[index % STATUS_COLORS.length]}
-                />
-              ))}
-              <LabelList dataKey="value" position="right" />
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
     </div>
   );
 }
