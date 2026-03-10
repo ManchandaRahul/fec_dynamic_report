@@ -9489,7 +9489,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-121",
-      "Summary": "#NAME?",
+      "Summary": "ULIP API testing and integration ",
       "IssueType": "Story",
       "Status": "UAT DONE",
       "Priority": "Medium",
@@ -10317,7 +10317,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-54",
-      "Summary": "#NAME?",
+      "Summary": "Multiple milestone update for one file job",
       "IssueType": "Task",
       "Status": "To Do",
       "Priority": "Medium",
@@ -10335,7 +10335,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-53",
-      "Summary": "#NAME?",
+      "Summary": "Single milestone update on multiple job",
       "IssueType": "Task",
       "Status": "UAT DONE",
       "Priority": "Medium",
@@ -10353,7 +10353,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-52",
-      "Summary": "#NAME?",
+      "Summary": "Create Workflow for file work bond extension",
       "IssueType": "Task",
       "Status": "To Do",
       "Priority": "Medium",
@@ -10605,7 +10605,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-36",
-      "Summary": "#NAME?",
+      "Summary": "Interest Calculation On Duty",
       "IssueType": "Task",
       "Status": "UAT DONE",
       "Priority": "Medium",
@@ -10623,7 +10623,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-35",
-      "Summary": "#NAME?",
+      "Summary": "Balance Stock Duty Calculation",
       "IssueType": "Task",
       "Status": "UAT DONE",
       "Priority": "Medium",
@@ -10659,7 +10659,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-33",
-      "Summary": "#NAME?",
+      "Summary": "Bank Guarantee Letter",
       "IssueType": "Task",
       "Status": "To Do",
       "Priority": "Medium",
@@ -10677,7 +10677,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-32",
-      "Summary": "#NAME?",
+      "Summary": "Bond Extension Annexure",
       "IssueType": "Task",
       "Status": "Development Done",
       "Priority": "Medium",
@@ -10695,7 +10695,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-31",
-      "Summary": "#NAME?",
+      "Summary": "Bond Extension Request & Declaration Letter",
       "IssueType": "Task",
       "Status": "Development Done",
       "Priority": "Medium",
@@ -10749,7 +10749,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-28",
-      "Summary": "#NAME?",
+      "Summary": "Delivery other details like OTS Seal, Driver details etc",
       "IssueType": "Task",
       "Status": "To Do",
       "Priority": "Medium",
@@ -10767,7 +10767,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-27",
-      "Summary": "#NAME?",
+      "Summary": "Delivery Chalan PDF Generation",
       "IssueType": "Task",
       "Status": "To Do",
       "Priority": "Medium",
@@ -10785,7 +10785,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-26",
-      "Summary": "#NAME?",
+      "Summary": "Delete / cancel job from planning",
       "IssueType": "Task",
       "Status": "Development Done",
       "Priority": "Medium",
@@ -10803,7 +10803,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-25",
-      "Summary": "#NAME?",
+      "Summary": "Assignment of vehicle to each lots + Additional Data",
       "IssueType": "Task",
       "Status": "UAT DONE",
       "Priority": "Medium",
@@ -10839,7 +10839,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-23",
-      "Summary": "#NAME?",
+      "Summary": "Email template dynamic + email send to From and To Warehouse",
       "IssueType": "Task",
       "Status": "Development Done",
       "Priority": "Medium",
@@ -10857,7 +10857,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-22",
-      "Summary": "#NAME?",
+      "Summary": "Stock pick sheet PDF",
       "IssueType": "Task",
       "Status": "To Do",
       "Priority": "Medium",
@@ -10875,7 +10875,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-21",
-      "Summary": "#NAME?",
+      "Summary": "Show selected job on right along with data insert lot wise in tables",
       "IssueType": "Task",
       "Status": "Testing TO DO",
       "Priority": "Medium",
@@ -10893,7 +10893,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-20",
-      "Summary": "#NAME?",
+      "Summary": "Manual quantity pick from each batch & varify by clicking OK button",
       "IssueType": "Task",
       "Status": "UAT DONE",
       "Priority": "Medium",
@@ -10911,7 +10911,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-19",
-      "Summary": "#NAME?",
+      "Summary": "On select of job show popup if batchwise data",
       "IssueType": "Task",
       "Status": "UAT DONE",
       "Priority": "Medium",
@@ -10929,7 +10929,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-18",
-      "Summary": "#NAME?",
+      "Summary": "Ready for delivery job listing left",
       "IssueType": "Task",
       "Status": "UAT DONE",
       "Priority": "Medium",
@@ -10965,7 +10965,7 @@
     {
       "module": "M&S Track",
       "IssueKey": "LGSN-16",
-      "Summary": "#NAME?",
+      "Summary": "Select vehicle type and Add more option for multiple lots",
       "IssueType": "Task",
       "Status": "Development Done",
       "Priority": "Medium",
