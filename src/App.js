@@ -3,7 +3,7 @@ import KPI from "./components/KPI";
 import Charts from "./components/Charts";
 import Table from "./components/Table";
 import Papa from "papaparse";
-
+import Logisync from "./assets/logisync.jpeg";
 import KaruyakiLogo1 from "./assets/kup.png";
 function App() {
   const [csv1, setCsv1] = useState(null);
@@ -438,7 +438,7 @@ const filteredData = getFilteredData();
               letterSpacing: "0.5px",
             }}
           >
-            FEC
+            
           </h1>
 <h1
             style={{
@@ -448,10 +448,21 @@ const filteredData = getFilteredData();
               letterSpacing: "0.5px",
             }}
           >
-          Modules Dashboard
+      FEC-Dev and M&S Status Dashboard
           </h1>         
 
         </div>
+        <img
+  src={Logisync}
+  alt="Logisync"
+  style={{
+    position: "absolute",
+    left: "50%",
+    transform: "translateX(-50%)",
+    height: "60px",
+    objectFit: "contain"
+  }}
+/>
 
       </div>
 
@@ -572,7 +583,7 @@ const filteredData = getFilteredData();
                 marginBottom: "0.8rem",
               }}
             >
-              Select Module to View
+              Select Worktrack to View
             </h3>
             <select
               value={selectedModule}
@@ -604,7 +615,17 @@ const filteredData = getFilteredData();
           selectedModule ? (
 <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1.5rem" }}>
 
-  <div style={{ background: "white", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.08)", padding: "1.5rem" }}>
+ <div style={{ 
+  background: "white", 
+  borderRadius: "16px", 
+  boxShadow: "0 10px 30px rgba(0,0,0,0.08)", 
+  padding: "1.5rem", 
+  display: "flex",          // Required for alignment to work
+  flexDirection: "column",   // Keeps content stacked vertically
+  alignItems: "center",      // Centers horizontally
+  justifyContent: "center",  // Centers vertically
+  textAlign: "center"        // Centers the text inside
+}}>
     <KPI data={filteredData} />
   </div>
 
@@ -687,7 +708,7 @@ const filteredData = getFilteredData();
           <img
             src={KaruyakiLogo1}
             alt="Karuyaki"
-            style={{ height: "22px" }}
+            style={{ height: "35px" }}
           />
         </div>
       </div>
